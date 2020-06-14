@@ -16,8 +16,6 @@ TextView txtKyqubtn;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
-
         txtKyqubtn = (TextView)findViewById(R.id.txtKyqu);
         txtKyqubtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,8 +12,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
    Button loginbutton;
    TextView txtRegjistrohubtn;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +26,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         txtRegjistrohubtn = (TextView)findViewById(R.id.txtRegjistrohu);
         txtRegjistrohubtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
