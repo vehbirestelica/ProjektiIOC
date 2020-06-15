@@ -105,6 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <CheckBox
         android:id="@+id/checkmbaje"
         android:layout_width="wrap_content"
@@ -118,11 +119,10 @@
         android:textCursorDrawable="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/btnLkyqu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLPassword"
         app:layout_constraintVertical_bias="0.0" />
-
 
     <EditText
         android:id="@+id/txtLPassword"
@@ -170,6 +170,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintVertical_bias="0.954" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,15 +44,15 @@ public class LoginActivity extends AppCompatActivity {
                 String password = lPassword.getText().toString().trim();
 
                 if (email.isEmpty()){
-                    lEmail.setError("Emaili duhet te vendoset");
+                    lEmail.setError("Emaili duhet të vendoset");
                     return;
                 }
                 if (password.isEmpty()){
-                    lPassword.setError("Passwordi duhet te vendoset");
+                    lPassword.setError("Passwordi duhet të vendoset");
                     return;
                 }
                 if (password.length()<6){
-                    lPassword.setError("Passwordi duhet te permbaj sepaku 6 karaktere");
+                    lPassword.setError("Passwordi duhet të permbaj së paku 6 karaktere");
                     return;
                 }
 
@@ -63,10 +63,10 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Jeni kyqur me Sukses",Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(LoginActivity.this,"Error "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Gabim në kyqje "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }

@@ -54,15 +54,16 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = rPassword.getText().toString().trim();
 
                 if (email.isEmpty()){
-                    rEmail.setError("Emaili duhet te vendoset");
+                    rEmail.setError("Emaili duhet të vendoset");
                     return;
                 }
                 if (password.isEmpty()){
-                    rPassword.setError("Passwordi duhet te vendoset");
+                    rPassword.setError("Passwordi duhet të vendoset");
                     return;
                 }
                 if (password.length()<6){
-                    rPassword.setError("Passwordi duhet te permbaj sepaku 6 karaktere");
+                    rPassword.setError("Passwordi duhet të permbaj së paku 6 karaktere");
+
                     return;
                 }
 
