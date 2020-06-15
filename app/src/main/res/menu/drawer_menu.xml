@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Menaxho të dhëna">
+        <menu>
+            <item android:id="@+id/m_kryefaqja"
+                  android:icon="@drawable/ic_home"
+                  android:title="Kryefaqja" />
+
+            <item android:id="@+id/m_fakturat"
+                  android:icon="@drawable/ic_fakturat"
+                  android:title="Fakturat" />
+
+            <item android:id="@+id/m_porosit"
+                  android:icon="@drawable/ic_porosite"
+                  android:title="Porositë" />
+
+            <item android:id="@+id/m_raporte"
+                  android:icon="@drawable/ic_raporte"
+                  android:title="Raporte" />
+
+        </menu>
+    </item>
+
+
+     <item android:title="Menaxho llogarinë">
+        <menu>
+            <item
+                android:id="@+id/m_llogaria"
+                android:icon="@drawable/ic_llogaria"
+                android:title="Llogaria" />
+            <item
+                android:id="@+id/m_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Preferencat" />
+            <item
+                android:id="@+id/m_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="Dil" />
+        </menu>
+     </item>
+</menu>
