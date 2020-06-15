@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OrdersActivity">
+<<<<<<< HEAD
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+
+>>>>>>> 6900793bc1d624ddec31cd41f92692e5508166da
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
