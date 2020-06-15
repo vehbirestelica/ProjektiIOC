@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -17,7 +19,15 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
 
     private static final String TAG="OrderListAdapter";
     private Context mContext;
-    int mResource;
+    private int mResource;
+    private int lastPosition=-1;
+
+    static class ViewHolder{
+        TextView emri;
+        TextView data;
+        TextView statusi;
+
+    }
 
     public OrderListAdapter (@NonNull Context context, int resource, @NonNull ArrayList<Orders> objects) {
         super(context, resource, objects);
@@ -36,16 +46,36 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
         //create the orders object with infos
         Orders orders = new Orders(emri, data, statusi);
 
-        LayoutInflater inflater=LayoutInflater.from(mContext);
-        convertView=inflater.inflate(mResource,parent,false);
+        final View result;
+        ViewHolder holder;
 
-        TextView tvEmri = (TextView) convertView.findViewById(R.id.textView1);
-        TextView tvData = (TextView) convertView.findViewById(R.id.textView2);
-        TextView tvStatusi = (TextView) convertView.findViewById(R.id.textView3);
+        if(convertView==null){
+            LayoutInflater inflater=LayoutInflater.from(mContext);
+            convertView=inflater.inflate(mResource,parent,false);
 
-        tvEmri.setText(emri);
-        tvData.setText(data);
-        tvStatusi.setText(statusi);
+            holder =new ViewHolder();
+
+            holder.emri=(TextView)convertView.findViewById(R.id.textView1);
+            holder.data=(TextView)convertView.findViewById(R.id.textView2);
+            holder.statusi=(TextView)convertView.findViewById(R.id.textView3);
+
+            result=convertView;
+
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder)convertView.getTag();
+            result=convertView;
+        }
+
+
+        Animation animation= AnimationUtils.loadAnimation(mContext, (position>lastPosition) ? R.anim.load_down_anim : R.anim.load_down_anim);
+
+        result.startAnimation(animation);
+        lastPosition = position;
+
+        holder.emri.setText(emri);
+        holder.data.setText(data);
+        holder.statusi.setText(statusi);
 
         return convertView;
     }
