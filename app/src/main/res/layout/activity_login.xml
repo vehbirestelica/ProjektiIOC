@@ -17,7 +17,7 @@
         android:textColor="@color/colorDarkGray"
         android:textSize="17sp"
         app:fontFamily="@font/ubuntu_medium"
-        app:layout_constraintBottom_toTopOf="@+id/txtemri"
+        app:layout_constraintBottom_toTopOf="@+id/txtLEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,20 +86,20 @@
         app:layout_constraintVertical_bias="0.88" />
 
     <EditText
-        android:id="@+id/txtemri"
+        android:id="@+id/txtLEmail"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="316dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/input_field"
         android:ems="10"
-        android:hint="Përdoruesi"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@color/colorgray"
         android:textColorLink="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/txtid"
+        app:layout_constraintBottom_toTopOf="@+id/txtLPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,16 +116,16 @@
         android:textColorHighlight="@color/colorPrimary"
         android:textColorLink="@color/colorPrimary"
         android:textCursorDrawable="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/btnkyqu"
+        app:layout_constraintBottom_toTopOf="@+id/btnLkyqu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtLPassword"
         app:layout_constraintVertical_bias="0.0" />
 
 
     <EditText
-        android:id="@+id/txtpassword"
+        android:id="@+id/txtLPassword"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -142,11 +142,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtemri"
+        app:layout_constraintTop_toBottomOf="@+id/txtLEmail"
         app:layout_constraintVertical_bias="0.253" />
 
     <Button
-        android:id="@+id/btnkyqu"
+        android:id="@+id/btnLkyqu"
         android:layout_width="150dp"
         android:layout_height="45dp"
         android:layout_marginBottom="20dp"
@@ -158,5 +158,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/LprogressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbackground"
-    tools:context=".RegisterActivity" >
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/logoioc2"
@@ -27,7 +27,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/txtkompania2"
+        android:id="@+id/txtkompaniaid"
         android:layout_width="310dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
@@ -57,7 +57,7 @@
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@color/colorgray"
         android:textColorLink="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/txtkompania2"
+        app:layout_constraintBottom_toTopOf="@+id/txtkompaniaid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
@@ -80,9 +80,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginBottom="32dp"
         android:text="Keni llogari ?"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
@@ -127,7 +127,7 @@
         android:id="@+id/btnRegjistrohu"
         android:layout_width="179dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button"
         android:text="Regjistrohu"
         android:textAllCaps="false"
@@ -137,7 +137,7 @@
         android:textColorLink="@color/colorPrimaryDarker"
         android:textCursorDrawable="@color/colorPrimary"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -147,6 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         android:linksClickable="true"
         android:text="Kyqu"
@@ -160,9 +161,18 @@
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegjistrohu"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
