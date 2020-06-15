@@ -19,15 +19,10 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
     private Context mContext;
     int mResource;
 
-//    public OrderListAdapter (@NonNull Context context, int resource, @NonNull ArrayList<Orders> objects, Context mContext) {
-      //  super(context, resource, objects);
-        //this.mContext = mContext;
-
     public OrderListAdapter (@NonNull Context context, int resource, @NonNull ArrayList<Orders> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
-
     }
 
     @NonNull
