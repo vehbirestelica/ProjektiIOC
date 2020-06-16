@@ -8,11 +8,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
@@ -26,7 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import javax.annotation.Nullable;
 
-public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener,MainFragment.onFragemntBtnSelected{
+public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -94,6 +98,8 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         fragmentTransaction.commit();
 
 
+
+
     }
 
     @Override
@@ -106,7 +112,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
 
                 drawerLayout.closeDrawer(GravityCompat .START);
             }
-        }, 500);
+        }, 200);
 
        // drawerLayout.closeDrawer(GravityCompat .START);
 
@@ -151,11 +157,6 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
 
 
     //shembull
-    @Override
-    public void onButtonSelected() {
 
-        Intent intent = new Intent(Mainmenu.this, OrdersActivity.class);
-        startActivity(intent);
-    }
 }
 

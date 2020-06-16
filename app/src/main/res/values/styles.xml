@@ -8,7 +8,12 @@
         <item name="colorAccent">@color/colorPrimaryRed</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="buttonStyle">@style/ButtonGradient</item>
 
+    </style>
+
+    <style name="ButtonGradient" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/gradientbtn</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">

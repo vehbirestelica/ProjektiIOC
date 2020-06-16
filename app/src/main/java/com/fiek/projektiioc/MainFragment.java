@@ -1,6 +1,8 @@
 package com.fiek.projektiioc;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,50 +13,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class MainFragment extends Fragment {
-    //Qekjo variabla onfragmentBtnSelected eshte vetem shembull ma posht
-  private onFragemntBtnSelected listener;
+    //Qekjo variabla onfragmentBtnSelected eshte vetem shembull ma poshte
+ImageButton btncall;
+
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_main,container,false);
 
-
-        ///shembullllll
-        Button clickme = view.findViewById(R.id.loadfragment);
-        clickme.setOnClickListener(new View.OnClickListener() {
-            @Override
+        btncall = (ImageButton) view.findViewById(R.id.img_administrata);
+        btncall.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                listener.onButtonSelected();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel: +38344558745"));
+                startActivity(callIntent);
             }
         });
 
 
 
         return view;
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof onFragemntBtnSelected) {
-            listener = (onFragemntBtnSelected) context;
-        } else {
-            throw new ClassCastException(context.toString() + "must implement listener");
-
-        }
-
 
     }
 
-    //shembull se si te implemtentohet klikimi i nje buttoni ne nje fragment
-    public  interface onFragemntBtnSelected {
-     public void onButtonSelected();
 
 
-    }
+
 
 }

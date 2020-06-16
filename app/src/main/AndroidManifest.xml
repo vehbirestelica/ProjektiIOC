@@ -3,6 +3,7 @@
     package="com.fiek.projektiioc">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,7 @@
         <activity android:name=".ProcessingOrders" />
         <activity
             android:name=".Mainmenu"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity android:name=".OrdersActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

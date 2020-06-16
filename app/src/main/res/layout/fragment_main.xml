@@ -6,29 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <Button
-        android:id="@+id/loadfragment"
-        android:layout_width="102dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="144dp"
-        android:background="@drawable/button"
-        android:text="Example"
-        android:textColor="@color/colorwhite"
+    <ImageButton
+        android:id="@+id/img_shtoFakture"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/gradientbtn"
+        android:src="@drawable/ic_addfakture"
+        android:tint="@color/colorwhite"
+        app:layout_constraintEnd_toStartOf="@+id/img_shtoPorosi"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="164dp"
+        android:text="Administrata"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="13sp"
+        app:fontFamily="@font/ubuntu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/img_historia"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/gradientbtn"
+        android:src="@drawable/ic_historia"
+        android:tint="@color/colorwhite"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginBottom="164dp"
+        android:text="Historia e Porosive"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="13sp"
+        app:fontFamily="@font/ubuntu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/img_shtoPorosi"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="@drawable/gradientbtn"
+        android:src="@drawable/ic_shtoporosi"
+        android:tint="@color/colorwhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:layout_marginBottom="40dp"
+        android:text="Shto Porosi"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="13sp"
+        app:fontFamily="@font/ubuntu"
+        app:layout_constraintBottom_toTopOf="@+id/img_administrata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/img_shtoPorosi"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="133dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="67dp"
+        android:id="@+id/imageView4"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="92dp"
         android:src="@drawable/appicon"
-        app:layout_constraintBottom_toTopOf="@+id/loadfragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="336dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:shadowColor="#CCCCCC"
+        android:text="Aplikacion për menaxhimin e fakturave dhe porosive online"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorDarkGray"
+        android:textIsSelectable="false"
+        android:textSize="16sp"
+        app:fontFamily="@font/ubuntu_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/BtnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/gradientbtn"
+        android:clickable="true"
+        android:src="@drawable/ic_phone"
+        android:tint="@color/colorwhite"
+        app:backgroundTint="#0AD199"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#9A9999" />
+
+    <ImageButton
+        android:id="@+id/img_administrata"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/gradientbtn"
+        android:src="@drawable/ic_administrata"
+        android:tint="@color/colorwhite"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/img_historia" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="12dp"
+        android:text="Shto Fakturë"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="13sp"
+        app:fontFamily="@font/ubuntu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_shtoFakture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
