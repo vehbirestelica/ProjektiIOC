@@ -104,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Log.d("TAG","onFailures: "+e.toString());
                                 }
                             });
+
                             Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                             startActivity(intent);
                         }

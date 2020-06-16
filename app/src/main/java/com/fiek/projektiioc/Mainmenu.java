@@ -12,10 +12,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import javax.annotation.Nullable;
 
 public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener,MainFragment.onFragemntBtnSelected{
 
@@ -27,7 +36,12 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
+    TextView Perdoruesi,Roli,Emaili;
 
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userId;
+    int companiId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +52,33 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         drawerLayout = findViewById(R.id.drawer);
         navigationView=findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //headeri
+        View header = navigationView.getHeaderView(0);
+        Perdoruesi = header.findViewById(R.id.txtHPerdoruesi);
+        Roli = header.findViewById(R.id.txtHRoli);
+        Emaili = header.findViewById(R.id.txtHEmaili);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        userId = fAuth.getCurrentUser().getUid();
+
+        DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                Perdoruesi.setText(documentSnapshot.getString("name"));
+                Emaili.setText(documentSnapshot.getString("email"));
+                companiId = Integer.parseInt(documentSnapshot.getString("companiID"));
+                if(companiId>10000 && companiId <20000){
+                    Roli.setText("Menaxher");
+                }
+                else {
+                    Roli.setText("Punetore");
+                }
+            }
+        });
 
         //action bar
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
@@ -94,6 +135,13 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.containerfragment,new BtnPorositeFragment());
             fragmentTransaction.commit();
+
+        }
+        if(menuItem.getItemId() == R.id.m_exit){
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
+            startActivity(intent);
+            finish();
 
         }
 

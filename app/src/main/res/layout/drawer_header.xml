@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtPerdoruesi"
+        android:id="@+id/txtHPerdoruesi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtRoli"
+        android:id="@+id/txtHRoli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgProfili"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmaili"
+        app:layout_constraintTop_toBottomOf="@+id/txtHEmaili"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
@@ -66,7 +66,7 @@
         app:srcCompat="@drawable/appicon" />
 
     <TextView
-        android:id="@+id/txtEmaili"
+        android:id="@+id/txtHEmaili"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -81,5 +81,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgProfili"
-        app:layout_constraintTop_toBottomOf="@+id/txtPerdoruesi" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHPerdoruesi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

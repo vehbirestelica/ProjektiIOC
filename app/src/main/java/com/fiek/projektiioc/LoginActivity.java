@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,11 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         btnLkyqu = findViewById(R.id.btnLkyqu);
 
+        // Nese useri ekziston
+//        if(fAuth.getCurrentUser() != null){
+//            Intent intent = new Intent(LoginActivity.this,Mainmenu.class);
+//            startActivity(intent);
+//        }
         btnLkyqu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
