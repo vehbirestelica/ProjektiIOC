@@ -149,13 +149,13 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         return true;
     }
 
+
     //shembull
     @Override
     public void onButtonSelected() {
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.containerfragment,new FakturatFragment());
-        fragmentTransaction.commit();
+
+        Intent intent = new Intent(Mainmenu.this, OrdersActivity.class);
+        startActivity(intent);
     }
 }
 

@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_newOrder2"
+        android:id="@+id/btn_newOrder"
         android:layout_width="266dp"
         android:layout_height="48dp"
         android:layout_marginTop="164dp"
@@ -110,10 +110,10 @@
         android:layout_width="119dp"
         android:layout_height="97dp"
         android:src="@drawable/appicon"
-        app:layout_constraintBottom_toTopOf="@+id/btn_newOrder2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_newOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
+        app:layout_constraintVertical_bias="0.692" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
