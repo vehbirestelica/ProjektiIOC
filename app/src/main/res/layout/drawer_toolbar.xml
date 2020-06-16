@@ -8,9 +8,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:title="@string/app_name"
+        android:background="@color/colorPrimaryLight"
+        android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar"
+        app:title="INVOICES ON CLICK"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
 

@@ -6,29 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:text="Kryefaqja"
-        android:textSize="20sp"
-        app:fontFamily="@font/ubuntu_medium"
-        app:layout_constraintBottom_toTopOf="@+id/loadfragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/loadfragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="144dp"
         android:background="@drawable/button"
-        android:text="Kryefaqja"
+        android:text="Example"
+        android:textColor="@color/colorwhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="133dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="67dp"
+        android:src="@drawable/appicon"
+        app:layout_constraintBottom_toTopOf="@+id/loadfragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
