@@ -20,25 +20,25 @@ public class OrdersActivity extends AppCompatActivity {
             ListView mListView = (ListView) findViewById(R.id.listView);
 
             Orders one = new Orders("Vehbi", "14/06/2020","Paid");
-            Orders two = new Orders("Vehbi2", "14/06/2020","Not Paid");
-            Orders three = new Orders("Vehbi3", "14/06/2020","In Progress");
+            Orders two = new Orders("Vehbi2", "14/06/2020","Paid");
+            Orders three = new Orders("Vehbi3", "14/06/2020","Paid");
             Orders four = new Orders("Vehbi4", "14/06/2020","Paid");
             Orders five = new Orders("Vehbi5", "14/06/2020","Paid");
             Orders six = new Orders("Vehbi6", "14/06/2020","Paid");
-            Orders seven = new Orders("Vehbi7", "14/06/2020","Not Paid");
+            Orders seven = new Orders("Vehbi7", "14/06/2020","Paid");
             Orders eight = new Orders("Vehbi8", "14/06/2020","Paid");
             Orders nine = new Orders("Vehbi9", "14/06/2020","Paid");
-            Orders ten = new Orders("Vehbi10", "14/06/2020","In Progress");
+            Orders ten = new Orders("Vehbi10", "14/06/2020","Paid");
             Orders eleven = new Orders("Vehbi", "14/06/2020","Paid");
-            Orders twelve = new Orders("Vehbi2", "14/06/2020","Not Paid");
-            Orders threeteen = new Orders("Vehbi3", "14/06/2020","In Progress");
+            Orders twelve = new Orders("Vehbi2", "14/06/2020","Paid");
+            Orders threeteen = new Orders("Vehbi3", "14/06/2020","Paid");
             Orders fourteen = new Orders("Vehbi4", "14/06/2020","Paid");
             Orders fiveteen = new Orders("Vehbi5", "14/06/2020","Paid");
             Orders sixteen = new Orders("Vehbi6", "14/06/2020","Paid");
-            Orders seventeen = new Orders("Vehbi7", "14/06/2020","Not Paid");
+            Orders seventeen = new Orders("Vehbi7", "14/06/2020","Paid");
             Orders eighteen = new Orders("Vehbi8", "14/06/2020","Paid");
             Orders nineteen = new Orders("Vehbi9", "14/06/2020","Paid");
-            Orders twenty = new Orders("Vehbi10", "14/06/2020","In Progress");
+            Orders twenty = new Orders("Vehbi10", "14/06/2020","Paid");
 
             ArrayList<Orders> ordersList = new ArrayList<>();
             ordersList.add(one);

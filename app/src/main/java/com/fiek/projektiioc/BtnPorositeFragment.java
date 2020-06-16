@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 
 public class BtnPorositeFragment extends Fragment {
     Button btnOrderCompleted;
+    Button btnOrderProcessing;
+    Button getBtnOrderNotPaid;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,6 +29,25 @@ public class BtnPorositeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        btnOrderProcessing = (Button) view.findViewById(R.id.btn_orderOnProces);
+        btnOrderProcessing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Intent intent2 = new Intent(getActivity(),ProcessingOrders.class);
+                startActivity(intent2);
+            }
+        });
+
+        getBtnOrderNotPaid = (Button) view.findViewById(R.id.btn_orderCancel2);
+        getBtnOrderNotPaid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Intent intent3 = new Intent(getActivity(),NotPaidOrders.class);
+                startActivity(intent3);
+            }
+        });
+
         return view;
     }
 }
