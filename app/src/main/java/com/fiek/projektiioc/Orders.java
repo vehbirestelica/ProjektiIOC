@@ -4,6 +4,14 @@ public class Orders {
     private String emri;
     private String data;
     private String statusi;
+    private String imgURL;
+
+    public Orders (String emri, String data, String statusi, String imgURL) {
+        this.emri = emri;
+        this.data = data;
+        this.statusi = statusi;
+        this.imgURL = imgURL;
+    }
 
     public String getEmri () {
         return emri;
@@ -29,9 +37,11 @@ public class Orders {
         this.statusi = statusi;
     }
 
-    public Orders (String emri, String data, String statusi) {
-        this.emri = emri;
-        this.data = data;
-        this.statusi = statusi;
+    public String getImgURL () {
+        return imgURL;
+    }
+
+    public void setImgURL (String imgURL) {
+        this.imgURL = imgURL;
     }
 }

@@ -46,8 +46,8 @@
             android:layout_height="30dp"
             android:id="@+id/textView3"
             android:text="TextView3"
+            android:textColor="#cc3300"
             android:textStyle="bold"
-            android:textColor="#006600"
             android:gravity="center"
             android:layout_below="@id/textView2"/>
     </LinearLayout>
