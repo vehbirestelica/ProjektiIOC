@@ -1,9 +1,9 @@
 package com.fiek.projektiioc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -16,26 +16,26 @@ public class NotPaidOrders extends AppCompatActivity {
 
         ListView mListView = (ListView) findViewById(R.id.listView);
 
-        Orders one = new Orders("Vehbi", "14/06/2020","Not Paid");
-        Orders two = new Orders("Vehbi2", "14/06/2020","Not Paid");
-        Orders three = new Orders("Vehbi3", "14/06/2020","Not Paid");
-        Orders four = new Orders("Vehbi4", "14/06/2020","Not Paid");
-        Orders five = new Orders("Vehbi5", "14/06/2020","Not Paid");
-        Orders six = new Orders("Vehbi6", "14/06/2020","Not Paid");
-        Orders seven = new Orders("Vehbi7", "14/06/2020","Not Paid");
-        Orders eight = new Orders("Vehbi8", "14/06/2020","Not Paid");
-        Orders nine = new Orders("Vehbi9", "14/06/2020","Not Paid");
-        Orders ten = new Orders("Vehbi10", "14/06/2020","Not Paid");
-        Orders eleven = new Orders("Vehbi", "14/06/2020","Not Paid");
-        Orders twelve = new Orders("Vehbi2", "14/06/2020","Not Paid");
-        Orders threeteen = new Orders("Vehbi3", "14/06/2020","Not Paid");
-        Orders fourteen = new Orders("Vehbi4", "14/06/2020","Not Paid");
-        Orders fiveteen = new Orders("Vehbi5", "14/06/2020","Not Paid");
-        Orders sixteen = new Orders("Vehbi6", "14/06/2020","Not Paid");
-        Orders seventeen = new Orders("Vehbi7", "14/06/2020","Not Paid");
-        Orders eighteen = new Orders("Vehbi8", "14/06/2020","Not Paid");
-        Orders nineteen = new Orders("Vehbi9", "14/06/2020","Not Paid");
-        Orders twenty = new Orders("Vehbi10", "14/06/2020","Not Paid");
+        Orders one = new Orders("Vehbi", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders two = new Orders("Vehbi2", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders three = new Orders("Vehbi3", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders four = new Orders("Vehbi4", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders five = new Orders("Vehbi5", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders six = new Orders("Vehbi6", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders seven = new Orders("Vehbi7", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders eight = new Orders("Vehbi8", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders nine = new Orders("Vehbi9", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders ten = new Orders("Vehbi10", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders eleven = new Orders("Vehbi", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders twelve = new Orders("Vehbi2", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders threeteen = new Orders("Vehbi3", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders fourteen = new Orders("Vehbi4", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders fiveteen = new Orders("Vehbi5", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders sixteen = new Orders("Vehbi6", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders seventeen = new Orders("Vehbi7", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders eighteen = new Orders("Vehbi8", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders nineteen = new Orders("Vehbi9", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        Orders twenty = new Orders("Vehbi10", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
 
         ArrayList<Orders> npordersList = new ArrayList<>();
         npordersList.add(one);
@@ -59,7 +59,7 @@ public class NotPaidOrders extends AppCompatActivity {
         npordersList.add(nineteen);
         npordersList.add(twenty);
 
-        OrderListAdapter npadapter = new OrderListAdapter(this, R.layout.adapterview,npordersList);
+        OrderListAdapter npadapter = new OrderListAdapter(this, R.layout.adapterview_notpaid,npordersList);
         mListView.setAdapter(npadapter);
 
     }

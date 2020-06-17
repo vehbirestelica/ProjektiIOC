@@ -7,13 +7,20 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderListAdapter extends ArrayAdapter<Orders> {
 
@@ -26,6 +33,7 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
         TextView emri;
         TextView data;
         TextView statusi;
+        ImageView image;
 
     }
 
@@ -38,13 +46,17 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
     @NonNull
     @Override
     public View getView (int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        setupImageLoader();
         //get order's info
         String emri=getItem(position).getEmri();
         String data=getItem(position).getData();
         String statusi=getItem(position).getStatusi();
+        String imgURL = getItem(position).getImgURL();
 
-        //create the orders object with infos
-        Orders orders = new Orders(emri, data, statusi);
+//        //create the orders object with infos
+//        Orders orders = new Orders(emri, data, statusi);
+
+
 
         final View result;
         ViewHolder holder;
@@ -55,9 +67,11 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
 
             holder =new ViewHolder();
 
+
             holder.emri=(TextView)convertView.findViewById(R.id.textView1);
             holder.data=(TextView)convertView.findViewById(R.id.textView2);
             holder.statusi=(TextView)convertView.findViewById(R.id.textView3);
+            holder.image = (ImageView) convertView.findViewById(R.id.image);
 
             result=convertView;
 
@@ -73,10 +87,37 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
         result.startAnimation(animation);
         lastPosition = position;
 
+        int defaultImage = mContext.getResources().getIdentifier("@drawable/image_failed",null,mContext.getPackageName());
+
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
+                .cacheOnDisc(true).resetViewBeforeLoading(true)
+                .showImageForEmptyUri(defaultImage)
+                .showImageOnFail(defaultImage)
+                .showImageOnLoading(defaultImage).build();
+
+        imageLoader.displayImage(imgURL, holder.image, options);
+
         holder.emri.setText(emri);
         holder.data.setText(data);
         holder.statusi.setText(statusi);
 
         return convertView;
+    }
+    private void setupImageLoader(){
+        // UNIVERSAL IMAGE LOADER SETUP
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheOnDisc(true).cacheInMemory(true)
+                .imageScaleType(ImageScaleType.EXACTLY)
+                .displayer(new FadeInBitmapDisplayer(300)).build();
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                mContext)
+                .defaultDisplayImageOptions(defaultOptions)
+                .memoryCache(new WeakMemoryCache())
+                .discCacheSize(100 * 1024 * 1024).build();
+
+        ImageLoader.getInstance().init(config);
+        // END - UNIVERSAL IMAGE LOADER SETUP
     }
 }
