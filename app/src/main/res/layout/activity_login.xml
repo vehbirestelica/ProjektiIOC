@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="I.O.C"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorDarkGray"
+        android:textColor="#404E5A"
         android:textColorHighlight="@color/colorPrimaryDarker"
         android:textColorHint="@color/colorPrimaryLight"
         android:textColorLink="@color/colorPrimary"
