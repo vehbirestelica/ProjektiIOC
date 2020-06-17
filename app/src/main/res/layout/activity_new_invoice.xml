@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewInvoiceActivity"
+    android:background="@drawable/loginbackground"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvInvTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="80dp"
+                android:text="Faktura"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="30sp"
+                app:fontFamily="@font/ubuntu_medium"
+                />
+
+            <EditText
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:id="@+id/txtInvTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tvInvTitle"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:hint="Titulli"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                />
+            <Spinner
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:id="@+id/spInvReason"
+                android:layout_below="@id/txtInvTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:spinnerMode="dialog"
+                android:entries="@array/spReason_items"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"/>
+
+            <EditText
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:id="@+id/txtInvSum"
+                android:layout_below="@id/spInvReason"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:hint="Shuma"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                />
+            <EditText
+                android:layout_width="310dp"
+                android:layout_height="50dp"
+                android:id="@+id/txtInvComment"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/txtInvSum"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:hint="Komenti"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                />
+            <Button
+            android:id="@+id/btnInvTakePic"
+            android:layout_width="179dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/buttonwhite"
+            android:text="Ngarko Faturen"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryLight"
+            android:textColorHighlight="@color/colorPrimaryDarker"
+            android:textColorHint="@color/colorPrimaryDarker"
+            android:textColorLink="@color/colorPrimaryDarker"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:textSize="17sp"
+            android:layout_below="@id/txtInvComment"
+            android:layout_centerHorizontal="true"
+            />
+            <Button
+                android:id="@+id/btnInvSend"
+                android:layout_width="179dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button"
+                android:text="Dergo"
+                android:textAllCaps="false"
+                android:textColor="@color/colorwhite"
+                android:textColorHighlight="@color/colorPrimaryDarker"
+                android:textColorHint="@color/colorPrimaryDarker"
+                android:textColorLink="@color/colorPrimaryDarker"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="17sp"
+                android:layout_below="@id/btnInvTakePic"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
