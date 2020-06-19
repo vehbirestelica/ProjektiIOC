@@ -60,10 +60,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/buttonwhite"
+        android:tint="@color/colorPrimaryDarker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/appicon" />
+        app:srcCompat="@drawable/ic_llogaria" />
 
     <TextView
         android:id="@+id/txtHEmaili"

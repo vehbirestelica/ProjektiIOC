@@ -97,8 +97,8 @@
 
     <Button
         android:id="@+id/btnKyqu"
-        android:layout_width="217dp"
-        android:layout_height="40dp"
+        android:layout_width="213dp"
+        android:layout_height="45dp"
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginEnd="85dp"

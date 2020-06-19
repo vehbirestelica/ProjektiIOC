@@ -17,8 +17,9 @@ import android.widget.ImageButton;
 
 
 public class MainFragment extends Fragment {
-    //Qekjo variabla onfragmentBtnSelected eshte vetem shembull ma poshte
-ImageButton btncall;
+
+
+     ImageButton btncall;
 
 
 
@@ -27,7 +28,6 @@ ImageButton btncall;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_main,container,false);
-
         btncall = (ImageButton) view.findViewById(R.id.img_administrata);
         btncall.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -37,14 +37,7 @@ ImageButton btncall;
             }
         });
 
-
-
         return view;
 
     }
-
-
-
-
-
 }

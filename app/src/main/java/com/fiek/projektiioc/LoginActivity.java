@@ -82,6 +82,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         txtRegjistrohubtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

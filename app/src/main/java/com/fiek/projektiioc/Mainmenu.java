@@ -2,6 +2,7 @@ package com.fiek.projektiioc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -9,11 +10,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -97,9 +100,35 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         fragmentTransaction.add(R.id.containerfragment,new MainFragment());
         fragmentTransaction.commit();
 
+    }
+    @Override
+    public void onBackPressed()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Mainmenu.this);
+        // Set the message show for the Alert time
+        builder.setMessage("A deshironi te largoheni nga IOC?");
+        builder.setTitle("Paralajmerim!");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Po",
+                new DialogInterface.OnClickListener() {
+                          @Override
+                            public void onClick(DialogInterface dialog,int which)
+                            {
+                                finish();
+                            }
+                        });
 
+        builder.setNegativeButton("Jo",
+                new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,int which)
+                            {
+                                dialog.cancel();
+                            }
+                        });
 
-
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
@@ -128,11 +157,8 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         }
         if(menuItem.getItemId() == R.id.m_fakturat){
 
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.containerfragment,new FakturatFragment());
-            fragmentTransaction.commit();
-
+            Intent intentfaktura = new Intent(Mainmenu.this,NewInvoiceActivity.class);
+            startActivity(intentfaktura);
 
         }
         if(menuItem.getItemId() == R.id.m_porosit){
@@ -143,7 +169,16 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
             fragmentTransaction.commit();
 
         }
+        if(menuItem.getItemId() == R.id.m_llogaria){
+
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.containerfragment,new Llogaria());
+            fragmentTransaction.commit();
+
+        }
         if(menuItem.getItemId() == R.id.m_exit){
+
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
             startActivity(intent);
