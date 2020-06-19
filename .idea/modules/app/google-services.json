@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1079300713581-b4mfuufpisvdha3spj6vru494h0urc5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fiek.projektiioc",
+            "certificate_hash": "2d994c362bb9ca40718160615d6e0cb04483538a"
+          }
+        },
+        {
           "client_id": "1079300713581-c63h596t5cr9hgig496p6tta57j6bcnv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
