@@ -169,6 +169,13 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
             fragmentTransaction.commit();
 
         }
+        if(menuItem.getItemId() == R.id.m_raporte){
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.containerfragment,new Raportet());
+            fragmentTransaction.commit();
+
+        }
         if(menuItem.getItemId() == R.id.m_llogaria){
 
             fragmentManager = getSupportFragmentManager();
