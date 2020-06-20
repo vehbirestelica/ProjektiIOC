@@ -9,9 +9,18 @@
     >
 
     <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
 
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            android:orientation="vertical" >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -91,6 +100,14 @@
                 android:textColorHint="@color/colorgray"
                 android:textColorLink="@color/colorPrimary"
                 />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_fakturat"
+                android:id="@+id/invimgview"
+                android:layout_below="@id/txtInvComment"/>
             <Button
             android:id="@+id/btnInvTakePic"
             android:layout_width="179dp"
@@ -105,7 +122,7 @@
             android:textColorLink="@color/colorPrimaryDarker"
             android:textCursorDrawable="@color/colorPrimary"
             android:textSize="17sp"
-            android:layout_below="@id/txtInvComment"
+            android:layout_below="@id/invimgview"
             android:layout_centerHorizontal="true"
             />
             <Button
@@ -127,7 +144,7 @@
                 />
 
         </RelativeLayout>
-
+        </LinearLayout>
 
     </ScrollView>
 
