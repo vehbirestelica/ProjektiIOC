@@ -127,7 +127,7 @@
         android:id="@+id/orderstotalCard"
         android:layout_width="165dp"
         android:layout_height="154dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="136dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"

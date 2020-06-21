@@ -4,21 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainfragmentbackground"
     tools:context=".Llogaria">
 
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Shkruaj passwordin e ri"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="268dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="298dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -33,63 +46,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="72dp"
         android:text="Menaxho Llogarinë"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
         android:textSize="19sp"
         app:fontFamily="@font/ubuntu_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="49dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/buttonwhite"
-        android:src="@drawable/ic_baseline_edit_24"
-        android:tint="@color/colorPrimaryDarker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="162dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/button"
         android:text="Ruaj ndryshimet"
         android:textColor="@color/colorwhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="272dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="298dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/input_field"
         android:ems="10"
-        android:hint="Passwordi ri"
+        android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
