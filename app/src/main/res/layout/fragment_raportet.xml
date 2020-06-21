@@ -26,15 +26,17 @@
         android:layout_width="165dp"
         android:layout_height="154dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="240dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ordersNotPaidCard"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderstotalCard">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,48 +127,45 @@
         android:id="@+id/orderstotalCard"
         android:layout_width="165dp"
         android:layout_height="154dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="136dp"
-        android:layout_marginBottom="44dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"
         app:cardElevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/ordersonprocessCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="165dp"
-                            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="90dp"
-                                android:src="@drawable/orderstotal"></ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/orderstotal"></ImageView>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:layout_marginTop="6dp"
-                                android:fontFamily="@font/ubuntu_medium"
-                                android:text="Totali i Porosive"
-                                android:textAlignment="center"
-                                android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Totali i Porosive"
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
-                            <TextView
-                                android:id="@+id/totalOrderstxt"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/ubuntu_bold"
-                                android:text="532"
-                                android:textAlignment="center"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="18sp" />
-                        </LinearLayout>
+            <TextView
+                android:id="@+id/totalOrderstxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="532"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
