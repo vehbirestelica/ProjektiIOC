@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -22,8 +24,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -38,8 +45,10 @@ public class NewInvoiceActivity extends AppCompatActivity {
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     ImageView selectedImage;
+    TextView title,sum,comment;
+    Spinner type;
     Button cameraBtn, sendBtn;
-    String currentPhotoPath;
+    String currentPhotoPath,storagephotoUri,strType,strTitle,strSum,strComment;
     File f;
     Uri contentUri;
     StorageReference storageReference;
@@ -52,6 +61,12 @@ public class NewInvoiceActivity extends AppCompatActivity {
         selectedImage = findViewById(R.id.invimgview);
         cameraBtn = findViewById(R.id.btnInvTakePic);
         sendBtn = findViewById(R.id.btnInvSend);
+
+        title = findViewById(R.id.txtInvTitle);
+        sum = findViewById(R.id.txtInvSum);
+        comment = findViewById(R.id.txtInvComment);
+
+        type = findViewById(R.id.spInvReason);
 
         storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -69,12 +84,42 @@ public class NewInvoiceActivity extends AppCompatActivity {
                 }
                 else {
                 uploadImageToFirebase(f.getName(), contentUri);
-                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+
                     onBackPressed();
                 }
             }
         });
 
+    }
+
+    private void createNewInvoice(String strTitle, String strType, String strSum, String strComment, String storagephotoUri) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        DocumentReference newInvoiceRef = db.collection("Invoices").document();
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        Invoice invoice = new Invoice();
+        invoice.setInvTitle(strTitle);
+        invoice.setInvType(strType);
+        invoice.setInvSum(strSum);
+        invoice.setInvComment(strComment);
+        invoice.setInvId(newInvoiceRef.getId());
+        invoice.setInvPhotoUri(storagephotoUri);
+        invoice.setUserId(userId);
+
+        newInvoiceRef.set(invoice).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(NewInvoiceActivity.this,"Failed",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void askCameraPermissions() {
@@ -131,9 +176,16 @@ public class NewInvoiceActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         Log.d("UploadedUriTag","onSuccess: Uploaded Image Uri is " + uri.toString());
+                        storagephotoUri = uri.toString();
+                        strType = type.getSelectedItem().toString();
+                        strSum = sum.getText().toString();
+                        strComment = comment.getText().toString();
+                        strTitle = title.getText().toString();
+
+                        createNewInvoice(strTitle,strType,strSum,strComment,storagephotoUri);
                     }
                 });
-                Toast.makeText(NewInvoiceActivity.this,"Image Uplpaded.", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(NewInvoiceActivity.this,"Image Uplpaded.", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {
