@@ -44,4 +44,14 @@ public class Orders {
     public void setImgURL (String imgURL) {
         this.imgURL = imgURL;
     }
+
+    @Override
+    public String toString () {
+        return "Orders{" +
+                "emri='" + emri + '\'' +
+                ", data='" + data + '\'' +
+                ", statusi='" + statusi + '\'' +
+                ", imgURL='" + imgURL + '\'' +
+                '}';
+    }
 }
