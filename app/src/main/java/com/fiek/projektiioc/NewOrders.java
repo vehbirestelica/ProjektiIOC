@@ -13,20 +13,59 @@ public class NewOrders {
     private String sasia;
     private String spinner;
     private String radioGroup;
+    private String statusi;
+    private String paguarRB;
+    private String paPaguarRB;
+    private String neProcesRB;
+
+    public String getPaguarRB () {
+        return paguarRB;
+    }
+
+    public void setPaguarRB (String paguarRB) {
+        this.paguarRB = paguarRB;
+    }
+
+    public String getPaPaguarRB () {
+        return paPaguarRB;
+    }
+
+    public void setPaPaguarRB (String paPaguarRB) {
+        this.paPaguarRB = paPaguarRB;
+    }
+
+    public String getNeProcesRB () {
+        return neProcesRB;
+    }
+
+    public void setNeProcesRB (String neProcesRB) {
+        this.neProcesRB = neProcesRB;
+    }
 
     public NewOrders() {
     }
 
 
-    public NewOrders (String porosia, String lokacioni, Date dataLeshimit, String sasia, String spinner, String radioGroup, String derguesi, String marresi) {
+    public NewOrders (String porosia, String lokacioni,String sasia, String derguesi, String marresi, String paguarRB, String paPaguarRB, String neProcesRB, String statusi) {
         this.porosia = porosia;
         this.lokacioni = lokacioni;
         this.dataLeshimit = dataLeshimit;
         this.sasia = sasia;
-        this.spinner = spinner;
         this.radioGroup = radioGroup;
         this.derguesi = derguesi;
         this.marresi = marresi;
+        this.paguarRB = paguarRB;
+        this.paPaguarRB = paPaguarRB;
+        this.neProcesRB = neProcesRB;
+        this.statusi = statusi;
+    }
+
+    public String getStatusi () {
+        return statusi;
+    }
+
+    public void setStatusi (String statusi) {
+        this.statusi = statusi;
     }
 
     public String getPorosia () {

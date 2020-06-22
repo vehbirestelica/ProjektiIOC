@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtInvSum"
             android:layout_marginTop="135dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="270dp">
 
             <RadioButton
