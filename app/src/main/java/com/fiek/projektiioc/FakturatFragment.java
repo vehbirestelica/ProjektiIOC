@@ -14,6 +14,7 @@ import android.widget.Button;
 
 public class FakturatFragment extends Fragment {
     Button btnNewInvoice;
+    Button btnMyInvoices;
 
     @Nullable
     @Override
@@ -25,6 +26,13 @@ public class FakturatFragment extends Fragment {
         btnNewInvoice.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),NewInvoiceActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnMyInvoices = (Button) view.findViewById(R.id.myInvbtn);
+        btnMyInvoices.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),MyInvoiceActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,11 +1,14 @@
 package com.fiek.projektiioc;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.firestore.ServerTimestamp;
 
 import java.util.Date;
 @IgnoreExtraProperties
-public class Invoice {
+public class Invoice implements Parcelable {
 
         private String invTitle;
         private String invType;
@@ -29,6 +32,28 @@ public class Invoice {
     public Invoice(){
 
     }
+
+    protected Invoice(Parcel in) {
+        invTitle = in.readString();
+        invType = in.readString();
+        invSum = in.readString();
+        invComment = in.readString();
+        invPhotoUri = in.readString();
+        invId = in.readString();
+        userId = in.readString();
+    }
+
+    public static final Creator<Invoice> CREATOR = new Creator<Invoice>() {
+        @Override
+        public Invoice createFromParcel(Parcel in) {
+            return new Invoice(in);
+        }
+
+        @Override
+        public Invoice[] newArray(int size) {
+            return new Invoice[size];
+        }
+    };
 
     public String getInvTitle() {
         return invTitle;
@@ -92,6 +117,22 @@ public class Invoice {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(invTitle);
+        dest.writeString(invType);
+        dest.writeString(invSum);
+        dest.writeString(invComment);
+        dest.writeString(invPhotoUri);
+        dest.writeString(invId);
+        dest.writeString(userId);
     }
 }
 
