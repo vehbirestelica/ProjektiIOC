@@ -157,8 +157,12 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         }
         if(menuItem.getItemId() == R.id.m_fakturat){
 
-            Intent intentfaktura = new Intent(Mainmenu.this,NewInvoiceActivity.class);
-            startActivity(intentfaktura);
+//            Intent intentfaktura = new Intent(Mainmenu.this,NewInvoiceActivity.class);
+//            startActivity(intentfaktura);
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.containerfragment,new FakturatFragment());
+            fragmentTransaction.commit();
 
         }
         if(menuItem.getItemId() == R.id.m_porosit){
