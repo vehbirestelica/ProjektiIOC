@@ -87,45 +87,25 @@
                     android:layout_height="80dp"
                     android:layout_below="@id/txtInvComment"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="68dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="35dp"
                     android:layout_marginBottom="20dp"
+                    android:layout_toEndOf="@+id/btnInvTakePic"
                     android:src="@drawable/ic_fakturat" />
 
                 <Button
                     android:id="@+id/btnInvTakePic"
                     android:layout_width="171dp"
                     android:layout_height="66dp"
-                    android:layout_above="@+id/btnInvSend"
-                    android:layout_below="@+id/txtInvComment"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="43dp"
-                    android:layout_marginEnd="174dp"
-                    android:layout_marginBottom="49dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="417dp"
                     android:background="@drawable/buttonwhite"
                     android:text="Ngarko Faturen"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryLight"
-                    android:textColorHighlight="@color/colorPrimaryDarker"
-                    android:textColorHint="@color/colorPrimaryDarker"
-                    android:textColorLink="@color/colorPrimaryDarker"
-                    android:textCursorDrawable="@color/colorPrimary"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btnInvSend"
-                    android:layout_width="179dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="115dp"
-                    android:layout_marginEnd="117dp"
-                    android:layout_marginBottom="87dp"
-                    android:background="@drawable/button"
-                    android:text="Dergo"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorwhite"
                     android:textColorHighlight="@color/colorPrimaryDarker"
                     android:textColorHint="@color/colorPrimaryDarker"
                     android:textColorLink="@color/colorPrimaryDarker"
@@ -146,6 +126,20 @@
                     android:textColor="@color/colorDarkGray"
                     android:textSize="30sp"
                     app:fontFamily="@font/ubuntu_medium" />
+
+                <Button
+                    android:id="@+id/btnInvSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="161dp"
+                    android:layout_marginEnd="162dp"
+                    android:layout_marginBottom="68dp"
+                    android:background="@drawable/button"
+                    android:text="Dergo"
+                    android:visibility="visible" />
 
             </RelativeLayout>
 
