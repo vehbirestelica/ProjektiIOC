@@ -4,53 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainfragmentbackground"
     tools:context=".FakturatFragment">
 
     <Button
         android:id="@+id/btnfaktura"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="228dp"
+        android:background="@drawable/button"
+        android:text="Shto Fakturen e re"
+        android:textAlignment="center"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/myInvbtn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/button"
+        android:padding="7dp"
+        android:text="Fakturat e Derguara"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toTopOf="@+id/allinvoicesbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnfaktura"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="272dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="FAKTURAT"
+        android:textAlignment="center"
+        android:textColor="@color/ColorblueSecondary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnfaktura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
-        android:background="@drawable/button"
-        android:text="Fakturat"
+        android:layout_marginBottom="72dp"
+        android:src="@drawable/appicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="155dp"
-        android:layout_height="182dp"
-        android:src="@drawable/ic_fakturat"
-        app:layout_constraintBottom_toTopOf="@+id/btnfaktura"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="View per fakturat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
     <Button
-        android:id="@+id/myInvbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="Fakturat e mia"
+        android:id="@+id/allinvoicesbtn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="144dp"
         android:background="@drawable/button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Fakturat"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnfaktura"
-        android:padding="7dp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

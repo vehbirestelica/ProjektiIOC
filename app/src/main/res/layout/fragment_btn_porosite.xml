@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainfragmentbackground"
     tools:context=".BtnPorositeFragment">
 
 
@@ -23,7 +24,7 @@
         android:textCursorDrawable="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/btn_orderCancel2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -42,14 +43,14 @@
         android:textCursorDrawable="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/btn_orderCompleted"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_parametrat"
         android:layout_width="266dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/button"
         android:paddingLeft="10sp"
         android:paddingRight="10sp"
@@ -59,9 +60,9 @@
         android:textColorHint="@color/colorwhite"
         android:textColorLink="@color/colorwhite"
         android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -80,14 +81,14 @@
         android:textCursorDrawable="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/btn_parametrat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_newOrder"
         android:layout_width="266dp"
         android:layout_height="48dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button"
         android:paddingLeft="10sp"
@@ -100,22 +101,34 @@
         android:textCursorDrawable="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/porositetitle"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="119dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="117dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="76dp"
         android:src="@drawable/appicon"
-        app:layout_constraintBottom_toTopOf="@+id/btn_newOrder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/porositetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Porositë"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ColorblueSecondary"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

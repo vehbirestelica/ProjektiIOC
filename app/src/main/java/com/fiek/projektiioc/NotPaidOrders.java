@@ -1,66 +1,79 @@
 package com.fiek.projektiioc;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotPaidOrders extends AppCompatActivity {
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference myRef;
+    private List<Orders> orders = new ArrayList<>();
+    private ArrayList<String> arrayList = new ArrayList<String>();
+    private ListView mListView;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
-        ListView mListView = (ListView) findViewById(R.id.listView);
+        mDatabase = FirebaseDatabase.getInstance();
+        myRef = mDatabase.getReference("Orders");
 
-        Orders one = new Orders("Vehbi", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders two = new Orders("Vehbi2", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders three = new Orders("Vehbi3", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders four = new Orders("Vehbi4", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders five = new Orders("Vehbi5", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders six = new Orders("Vehbi6", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders seven = new Orders("Vehbi7", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders eight = new Orders("Vehbi8", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders nine = new Orders("Vehbi9", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders ten = new Orders("Vehbi10", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders eleven = new Orders("Vehbi", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders twelve = new Orders("Vehbi2", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders threeteen = new Orders("Vehbi3", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders fourteen = new Orders("Vehbi4", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders fiveteen = new Orders("Vehbi5", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders sixteen = new Orders("Vehbi6", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders seventeen = new Orders("Vehbi7", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders eighteen = new Orders("Vehbi8", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders nineteen = new Orders("Vehbi9", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
-        Orders twenty = new Orders("Vehbi10", "14/06/2020","Not Paid","drawable://"+R.drawable.mann);
+        mListView = (ListView) findViewById(R.id.listView);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
+        mListView.setAdapter(arrayAdapter);
 
-        ArrayList<Orders> npordersList = new ArrayList<>();
-        npordersList.add(one);
-        npordersList.add(two);
-        npordersList.add(three);
-        npordersList.add(four);
-        npordersList.add(five);
-        npordersList.add(six);
-        npordersList.add(seven);
-        npordersList.add(eight);
-        npordersList.add(nine);
-        npordersList.add(ten);
-        npordersList.add(eleven);
-        npordersList.add(twelve);
-        npordersList.add(threeteen);
-        npordersList.add(fourteen);
-        npordersList.add(fiveteen);
-        npordersList.add(sixteen);
-        npordersList.add(seventeen);
-        npordersList.add(eighteen);
-        npordersList.add(nineteen);
-        npordersList.add(twenty);
+        Query query  = FirebaseDatabase.getInstance().getReference("Orders")
+                .orderByChild("Statusi")
+                .equalTo("Pa Paguar");
+        query.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                String emri = snapshot.child("Emri").getValue(String.class);
+                String data = snapshot.child("Data").getValue(String.class);
+                String statusi = snapshot.child("Statusi").getValue(String.class);
+                String value = emri + " \t\t\t\t\t\t\t\t\t\t " + data + " \t\t\t\t\t\t\t\t\t\t\t" + statusi;
+                arrayList.add(value);
+//                arrayList.add(data);
+//                arrayList.add(statusi);
+                arrayAdapter.notifyDataSetChanged();
+            }
 
-        OrderListAdapter npadapter = new OrderListAdapter(this, R.layout.adapterview_notpaid,npordersList);
-        mListView.setAdapter(npadapter);
+            @Override
+            public void onChildChanged (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved (@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled (@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 }
+

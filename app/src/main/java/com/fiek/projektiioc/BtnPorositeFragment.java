@@ -16,11 +16,20 @@ public class BtnPorositeFragment extends Fragment {
     Button btnOrderCompleted;
     Button btnOrderProcessing;
     Button getBtnOrderNotPaid;
+    Button addNewOrder;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_btn_porosite, container, false);
+
+        addNewOrder = (Button) view.findViewById(R.id.btn_newOrder);
+        addNewOrder.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getActivity(), NewOrdersActivity.class);
+                startActivity(intent1);
+            }
+        });
 
         btnOrderCompleted = (Button) view.findViewById(R.id.btn_orderCompleted);
         btnOrderCompleted.setOnClickListener(new View.OnClickListener() {

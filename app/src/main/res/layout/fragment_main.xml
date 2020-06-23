@@ -9,33 +9,33 @@
 
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txtporositeefundit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/ubuntu"
         android:text="Porositë e fundit >>>"
         android:textColor="@color/colorDarkGray"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalprofitCard"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.803" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="410dp"
         android:layout_height="180dp"
+        android:scrollbarThumbHorizontal="@drawable/scrollthumb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729"
-        android:scrollbarThumbHorizontal="@drawable/scrollthumb">
+        app:layout_constraintVertical_bias="0.729">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -428,8 +428,8 @@
                 android:id="@+id/order4Card"
                 android:layout_width="160dp"
                 android:layout_height="164dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 android:background="@color/cardview_light_background"
                 app:cardCornerRadius="10dp"
@@ -556,8 +556,8 @@
                 android:id="@+id/ordersPaidCard"
                 android:layout_width="160dp"
                 android:layout_height="164dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 android:background="@color/cardview_light_background"
                 app:cardCornerRadius="10dp"
@@ -683,13 +683,34 @@
 
     </HorizontalScrollView>
 
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/backcardprofiti"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="174dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/shpenzimetCard"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/totalprofitCard"-->
+    <!--        app:layout_constraintVertical_bias="0.263">-->
+
+    <!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="77dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:textColor="Si llogaritet Profiti?" />&ndash;&gt;-->
+
+    <!--    </LinearLayout>-->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/totalprofitCard"
-        android:layout_width="180dp"
+        android:layout_width="170dp"
         android:layout_height="174dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="128dp"
-        android:background="@color/cardview_light_background"
+        android:background="@color/colorwhite"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
@@ -723,15 +744,15 @@
 
                 <TextView
                     android:id="@+id/totalprofits"
-                    android:layout_width="52dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="56dp"
+                    android:layout_height="22dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="52dp"
+                    android:layout_marginStart="28dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="-6dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_toStartOf="@+id/totalprofit"
                     android:fontFamily="@font/ubuntu_bold"
                     android:text="2458"
@@ -762,30 +783,9 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/backcardprofiti"-->
-<!--        android:layout_width="180dp"-->
-<!--        android:layout_height="174dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/shpenzimetCard"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/totalprofitCard"-->
-<!--        app:layout_constraintVertical_bias="0.263">-->
-
-<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_height="77dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:textColor="Si llogaritet Profiti?" />&ndash;&gt;-->
-
-<!--    </LinearLayout>-->
-
     <androidx.cardview.widget.CardView
         android:id="@+id/shpenzimetCard"
-        android:layout_width="180dp"
+        android:layout_width="170dp"
         android:layout_height="174dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="128dp"
@@ -827,15 +827,15 @@
 
                 <TextView
                     android:id="@+id/totalshpezimet"
-                    android:layout_width="50dp"
-                    android:layout_height="22dp"
+                    android:layout_width="62dp"
+                    android:layout_height="31dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="61dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="-9dp"
-                    android:layout_marginBottom="17dp"
+                    android:layout_marginStart="52dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="-12dp"
+                    android:layout_marginBottom="19dp"
 
                     android:layout_toStartOf="@+id/totalshpezime"
                     android:fontFamily="@font/ubuntu_bold"
@@ -870,13 +870,13 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/ubuntu"
         android:text="Kërko Porositë"
         android:textColor="@color/colorDarkGray"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -921,7 +921,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/buttonwhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 

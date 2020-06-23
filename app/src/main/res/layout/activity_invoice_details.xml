@@ -4,70 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cardbackground"
     tools:context=".Invoice_details">
 
-    <TextView
-        android:id="@+id/inv_det_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/inv_det_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/shpenzimetCard"
+        android:layout_width="350dp"
+        android:layout_height="546dp"
+        android:layout_marginTop="62dp"
+        app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_pressed"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inv_det_title" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/inv_det_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inv_det_type" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/inv_det_comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inv_det_sum" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Faktura"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/inv_det_invId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inv_det_comment" />
+            <TextView
+                android:id="@+id/inv_det_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Titulli"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
 
-    <ImageView
-        android:id="@+id/inv_det_photo"
-        android:layout_width="300dp"
-        android:layout_height="450dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inv_det_invId"
-        app:srcCompat="@drawable/ic_fakturat" />
+            <TextView
+                android:id="@+id/inv_det_title"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/inv_type_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Lloji"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/inv_det_type"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/inv_det_title" />
+
+            <TextView
+                android:id="@+id/inv_sum_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Shuma"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/inv_det_sum"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/inv_det_type" />
+
+            <TextView
+                android:id="@+id/inv_comm_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Koment"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/inv_det_comment"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/inv_det_sum" />
+
+            <TextView
+                android:id="@+id/inv_invid_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="ID e Faktures dhe Foto Deshmia"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/inv_det_invId"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/inv_det_comment" />
+
+            <ImageView
+                android:id="@+id/inv_det_photo"
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inv_det_invId"
+                app:layout_constraintVertical_bias="0.169"
+                app:srcCompat="@drawable/ic_fakturat" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

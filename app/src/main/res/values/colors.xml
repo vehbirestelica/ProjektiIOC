@@ -11,5 +11,7 @@
     <color name="colorDarkGray">#494949</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBlue">#151F7A</color>
+    <color name="ColorBlueMain">#013F6F</color>
+    <color name="ColorblueSecondary">#0B3F66</color>
 
 </resources>

@@ -6,11 +6,14 @@ public class Orders {
     private String statusi;
     private String imgURL;
 
-    public Orders (String emri, String data, String statusi, String imgURL) {
+    public Orders () {
+    }
+
+    public Orders (String emri, String data, String statusi) {
         this.emri = emri;
         this.data = data;
         this.statusi = statusi;
-        this.imgURL = imgURL;
+//        this.imgURL = imgURL;
     }
 
     public String getEmri () {
@@ -44,4 +47,5 @@ public class Orders {
     public void setImgURL (String imgURL) {
         this.imgURL = imgURL;
     }
+
 }
