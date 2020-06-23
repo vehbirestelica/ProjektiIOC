@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cardbackground"
+    android:background="@drawable/mainfragmentbackground"
     tools:context=".BtnPorositeFragment">
 
 
@@ -88,7 +88,7 @@
         android:id="@+id/btn_newOrder"
         android:layout_width="266dp"
         android:layout_height="48dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button"
         android:paddingLeft="10sp"
@@ -120,12 +120,12 @@
         android:id="@+id/porositetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="84dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Porositë"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/colorwhite"
+        android:textColor="@color/ColorblueSecondary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
