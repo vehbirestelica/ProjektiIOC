@@ -47,14 +47,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_parametrat"
+        android:id="@+id/btnPorosite"
         android:layout_width="266dp"
         android:layout_height="48dp"
         android:layout_marginBottom="84dp"
         android:background="@drawable/button"
         android:paddingLeft="10sp"
         android:paddingRight="10sp"
-        android:text="PARAMETRAT"
+        android:text="Porosite"
         android:textColor="@color/colorwhite"
         android:textColorHighlight="@color/colorwhite"
         android:textColorHint="@color/colorwhite"
@@ -79,7 +79,7 @@
         android:textColorHint="@color/colorwhite"
         android:textColorLink="@color/colorwhite"
         android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_parametrat"
+        app:layout_constraintBottom_toTopOf="@+id/btnPorosite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />

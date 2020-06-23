@@ -16,6 +16,7 @@ public class FakturatFragment extends Fragment {
     Button btnNewInvoice;
     Button btnMyInvoices;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class FakturatFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
 
         return view;
     }
