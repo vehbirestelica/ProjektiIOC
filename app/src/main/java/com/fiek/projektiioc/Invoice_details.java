@@ -24,7 +24,6 @@ public class Invoice_details extends AppCompatActivity {
         Invoice invoice = intent.getParcelableExtra("invoice");
 
 
-
         title = findViewById(R.id.inv_det_title);
         type = findViewById(R.id.inv_det_type);
         sum = findViewById(R.id.inv_det_sum);
