@@ -19,19 +19,20 @@ import com.google.protobuf.StringValue;
 public class FakturatFragment extends Fragment {
     Button btnNewInvoice;
     Button btnMyInvoices;
+    Button btnAllInvoices;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_fakturat,container,false);
-        int i = 0;
+        int companyId = 0;
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            i = bundle.getInt("Compani Id", 19999);
+            companyId = bundle.getInt("Company Id", 19999);
         }
 
-        Log.d("companid", "onCreateView: " + i);
+        Log.d("companyid", "onCreateView: " + companyId);
 
         btnNewInvoice = (Button) view.findViewById(R.id.btnfaktura);
         btnNewInvoice.setOnClickListener(new View.OnClickListener() {
@@ -41,18 +42,20 @@ public class FakturatFragment extends Fragment {
             }
         });
         btnMyInvoices = (Button) view.findViewById(R.id.myInvbtn);
-        if(i>10000 && i <20000){
-            btnMyInvoices.setVisibility(View.GONE);
-        }
-        else {
-            btnMyInvoices.setVisibility(View.VISIBLE);
-        }
         btnMyInvoices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),MyInvoiceActivity.class);
                 startActivity(intent);
             }
         });
+
+        btnAllInvoices = view.findViewById(R.id.allinvoicesbtn);
+        if(companyId>10000 && companyId <20000){
+            btnAllInvoices.setVisibility(View.VISIBLE);
+        }
+        else {
+            btnAllInvoices.setVisibility(View.GONE);
+        }
 
         return view;
     }

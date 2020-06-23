@@ -49,7 +49,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
-    int companiId;
+    int companyId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +78,8 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 Perdoruesi.setText(documentSnapshot.getString("name"));
                 Emaili.setText(documentSnapshot.getString("email"));
-                companiId = Integer.parseInt(documentSnapshot.getString("companiID"));
-                if(companiId>10000 && companiId <20000){
+                companyId = Integer.parseInt(documentSnapshot.getString("companiID"));
+                if(companyId>10000 && companyId <20000){
                     Roli.setText("Menaxher");
                 }
                 else {
@@ -164,7 +164,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
             fragmentTransaction = fragmentManager.beginTransaction();
             FakturatFragment fragment = new FakturatFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("Compani Id", companiId);
+            bundle.putInt("Company Id", companyId);
             fragment.setArguments(bundle);
             fragmentTransaction.replace(R.id.containerfragment,fragment);
             fragmentTransaction.commit();
@@ -196,9 +196,10 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         if(menuItem.getItemId() == R.id.m_exit){
 
             FirebaseAuth.getInstance().signOut();
+            finish();
             Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
             startActivity(intent);
-            finish();
+
 
         }
 
