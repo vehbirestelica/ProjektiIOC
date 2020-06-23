@@ -161,7 +161,11 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
 //            startActivity(intentfaktura);
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.containerfragment,new FakturatFragment());
+            FakturatFragment fragment = new FakturatFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("Compani Id", companiId);
+            fragment.setArguments(bundle);
+            fragmentTransaction.replace(R.id.containerfragment,fragment);
             fragmentTransaction.commit();
 
         }
