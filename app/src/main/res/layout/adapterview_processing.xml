@@ -41,14 +41,15 @@
             android:id="@+id/textView2"
             android:text="TextView2"
             android:gravity="center" />
+
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:id="@+id/textView3"
-            android:text="TextView3"
-            android:textColor="#ffff00"
-            android:textStyle="bold"
+            android:layout_below="@id/textView2"
             android:gravity="center"
-            android:layout_below="@id/textView2"/>
+            android:text="TextView3"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
