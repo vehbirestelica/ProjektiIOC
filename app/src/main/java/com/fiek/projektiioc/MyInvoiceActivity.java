@@ -15,9 +15,14 @@ import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MyInvoiceActivity extends AppCompatActivity {
 
@@ -35,9 +40,13 @@ public class MyInvoiceActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        Query query = db.collection("Invoices");
+        CollectionReference invoicesCollectionRef = db.collection("Invoices");
 
-        FirestoreRecyclerOptions<Invoice> options = new FirestoreRecyclerOptions.Builder<Invoice>().setQuery(query, Invoice.class).build();
+        Query invoicesQuery = invoicesCollectionRef.whereEqualTo("userId", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .orderBy("timestamp",Query.Direction.DESCENDING);
+
+
+        FirestoreRecyclerOptions<Invoice> options = new FirestoreRecyclerOptions.Builder<Invoice>().setQuery(invoicesQuery, Invoice.class).build();
 
          adapter = new FirestoreRecyclerAdapter<Invoice, InvoicesViewHolder>(options) {
             @NonNull
