@@ -56,6 +56,12 @@ public class FakturatFragment extends Fragment {
         else {
             btnAllInvoices.setVisibility(View.GONE);
         }
+        btnAllInvoices.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),All_InvoicesActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

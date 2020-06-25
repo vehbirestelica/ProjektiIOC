@@ -18,7 +18,11 @@ public class Invoice implements Parcelable {
         private String invPhotoUri;
         private String invId;
         private String userId;
-    public Invoice(String invTitle,String invType, Date timestamp,String invSum,String invComment,String invPhotoUri, String invId,String userId)
+        private String usersName;
+
+
+
+    public Invoice(String invTitle,String invType, Date timestamp,String invSum,String invComment,String invPhotoUri, String invId,String userId, String usersName)
     {
         this.invTitle = invTitle;
         this.invType = invType;
@@ -28,6 +32,7 @@ public class Invoice implements Parcelable {
         this.invPhotoUri = invPhotoUri;
         this.invId = invId;
         this.userId = userId;
+        this.usersName = usersName;
     }
     public Invoice(){
 
@@ -41,6 +46,7 @@ public class Invoice implements Parcelable {
         invPhotoUri = in.readString();
         invId = in.readString();
         userId = in.readString();
+        usersName = in.readString();
     }
 
     public static final Creator<Invoice> CREATOR = new Creator<Invoice>() {
@@ -119,6 +125,14 @@ public class Invoice implements Parcelable {
         this.userId = userId;
     }
 
+    public String getUsersName() {
+        return usersName;
+    }
+
+    public void setUsersName(String usersName) {
+        this.usersName = usersName;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -133,6 +147,7 @@ public class Invoice implements Parcelable {
         dest.writeString(invPhotoUri);
         dest.writeString(invId);
         dest.writeString(userId);
+        dest.writeString(usersName);
     }
 }
 

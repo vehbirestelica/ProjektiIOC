@@ -30,7 +30,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -48,7 +51,7 @@ public class NewInvoiceActivity extends AppCompatActivity {
     TextView title,sum,comment;
     Spinner type;
     Button cameraBtn, sendBtn;
-    String currentPhotoPath,storagephotoUri,strType,strTitle,strSum,strComment;
+    String currentPhotoPath,storagephotoUri,strType,strTitle,strSum,strComment, strUsersName;
     File f;
     Uri contentUri;
     StorageReference storageReference;
@@ -93,34 +96,6 @@ public class NewInvoiceActivity extends AppCompatActivity {
 
     }
 
-    private void createNewInvoice(String strTitle, String strType, String strSum, String strComment, String storagephotoUri) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        DocumentReference newInvoiceRef = db.collection("Invoices").document();
-
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-        Invoice invoice = new Invoice();
-        invoice.setInvTitle(strTitle);
-        invoice.setInvType(strType);
-        invoice.setInvSum(strSum);
-        invoice.setInvComment(strComment);
-        invoice.setInvId(newInvoiceRef.getId());
-        invoice.setInvPhotoUri(storagephotoUri);
-        invoice.setUserId(userId);
-
-        newInvoiceRef.set(invoice).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(NewInvoiceActivity.this,"Failed",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 
     private void askCameraPermissions() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
@@ -174,15 +149,29 @@ public class NewInvoiceActivity extends AppCompatActivity {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
-                    public void onSuccess(Uri uri) {
+                    public void onSuccess(final Uri uri) {
                         Log.d("UploadedUriTag","onSuccess: Uploaded Image Uri is " + uri.toString());
-                        storagephotoUri = uri.toString();
-                        strType = type.getSelectedItem().toString();
-                        strSum = sum.getText().toString();
-                        strComment = comment.getText().toString();
-                        strTitle = title.getText().toString();
+                        final String struri = uri.toString();
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                        createNewInvoice(strTitle,strType,strSum,strComment,storagephotoUri);
+
+                        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        DocumentReference documentReference = db.collection("users").document(userId);
+                        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                                strUsersName = documentSnapshot.getString("name");
+
+                                storagephotoUri = struri;
+                                strType = type.getSelectedItem().toString();
+                                strSum = sum.getText().toString();
+                                strComment = comment.getText().toString();
+                                strTitle = title.getText().toString();
+
+                                createNewInvoice(strTitle,strType,strSum,strComment,storagephotoUri,strUsersName);
+                            }
+                        });
+
                     }
                 });
                // Toast.makeText(NewInvoiceActivity.this,"Image Uplpaded.", Toast.LENGTH_SHORT).show();
@@ -196,6 +185,37 @@ public class NewInvoiceActivity extends AppCompatActivity {
         });
     }
 
+    private void createNewInvoice(String strTitle, String strType, String strSum, String strComment, String storagephotoUri, String strUsersName) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        DocumentReference newInvoiceRef = db.collection("Invoices").document();
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
+        Invoice invoice = new Invoice();
+        invoice.setInvTitle(strTitle);
+        invoice.setInvType(strType);
+        invoice.setInvSum(strSum);
+        invoice.setInvComment(strComment);
+        invoice.setInvId(newInvoiceRef.getId());
+        invoice.setInvPhotoUri(storagephotoUri);
+        invoice.setUserId(userId);
+        invoice.setUsersName(strUsersName);
+
+
+        newInvoiceRef.set(invoice).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(NewInvoiceActivity.this,"Failed",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     private File createImageFile() throws IOException {
         // Create an image file name
