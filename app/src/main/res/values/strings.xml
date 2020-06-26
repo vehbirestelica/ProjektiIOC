@@ -17,6 +17,12 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string-array name="spDerguesi">
+        <item>Punetori 1</item>
+        <item>Punetori 2</item>
+        <item>Punetori 3</item>
+        <item>Punetori 4</item>
+    </string-array>
 
 
 </resources>

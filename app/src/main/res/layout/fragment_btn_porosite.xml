@@ -42,15 +42,38 @@
         android:textColorLink="@color/colorwhite"
         android:textCursorDrawable="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/btn_orderCompleted"
+        app:layout_constraintTop_toBottomOf="@+id/myOrders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/myOrders"
+        android:text="Porosite e Mia"
+        android:layout_width="266dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
+        android:textColor="@color/colorwhite"
+        android:textColorHighlight="@color/colorwhite"
+        android:textColorHint="@color/colorwhite"
+        android:textColorLink="@color/colorwhite"
+        android:textCursorDrawable="@color/colorwhite"
+        app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_newOrder" />
 
     <Button
         android:id="@+id/btnPorosite"
         android:layout_width="266dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="74dp"
         android:background="@drawable/button"
         android:paddingLeft="10sp"
         android:paddingRight="10sp"
@@ -120,7 +143,7 @@
         android:id="@+id/porositetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="54dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Porositë"
         android:textAlignment="center"

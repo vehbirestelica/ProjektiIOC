@@ -196,7 +196,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         if(menuItem.getItemId() == R.id.m_exit){
 
             FirebaseAuth.getInstance().signOut();
-            finish();
+//            finish();
             Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
             startActivity(intent);
 
