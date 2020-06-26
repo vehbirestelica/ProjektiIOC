@@ -30,7 +30,7 @@ public class newProducts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_products);
 
-        productn = (TextView) findViewById(R.id.productname);
+        productn = (TextView)findViewById(R.id.productname);
         productc = (TextView)findViewById(R.id.productcost);
         productcomm = (TextView)findViewById(R.id.productcomment);
         relased = (TextView)findViewById(R.id.productrealsedate);
@@ -85,7 +85,7 @@ public class newProducts extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
 
-        String[] products = new String[jsonArray.length()];
+      //  String[] products = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
 
             JSONObject obj = jsonArray.getJSONObject(i);
@@ -95,10 +95,10 @@ public class newProducts extends AppCompatActivity {
             relasedate= obj.getString("releasdate");
             productcost = obj.getString("productcost");
 
-            productn.append("Produkti :" + productname);
-            productcomm.append("Komente :" + productcomment);
-            relased.append("Data :" + relasedate);
-            productc.append("Cmimi :" + productcost);
+            productn.append("\n" + productname);
+            productcomm.append("\n" + productcomment);
+            relased.append("\n" + relasedate);
+            productc.append("\n" + productcost);
 
         }
     }
