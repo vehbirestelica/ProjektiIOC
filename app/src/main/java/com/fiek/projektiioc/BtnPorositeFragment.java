@@ -18,6 +18,7 @@ public class BtnPorositeFragment extends Fragment {
     Button getBtnOrderNotPaid;
     Button addNewOrder;
     Button btnnewproducts;
+    Button btnMyOrders;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -65,6 +66,16 @@ public class BtnPorositeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        btnMyOrders = (Button) view.findViewById(R.id.myOrders);
+        btnMyOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Intent intent = new Intent(getActivity(),MyOrders.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }

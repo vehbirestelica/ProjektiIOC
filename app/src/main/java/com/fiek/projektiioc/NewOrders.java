@@ -17,6 +17,15 @@ public class NewOrders {
     private String paguarRB;
     private String paPaguarRB;
     private String neProcesRB;
+    private String userID;
+
+    public String getUserID () {
+        return userID;
+    }
+
+    public void setUserID (String userID) {
+        this.userID = userID;
+    }
 
     public String getPaguarRB () {
         return paguarRB;
@@ -45,19 +54,20 @@ public class NewOrders {
     public NewOrders() {
     }
 
-
-    public NewOrders (String porosia, String lokacioni,String sasia, String derguesi, String marresi, String paguarRB, String paPaguarRB, String neProcesRB, String statusi) {
+    public NewOrders (String porosia, String lokacioni, Date dataLeshimit, String derguesi, String marresi, String sasia, String spinner, String radioGroup, String statusi, String paguarRB, String paPaguarRB, String neProcesRB, String userID) {
         this.porosia = porosia;
         this.lokacioni = lokacioni;
         this.dataLeshimit = dataLeshimit;
-        this.sasia = sasia;
-        this.radioGroup = radioGroup;
         this.derguesi = derguesi;
         this.marresi = marresi;
+        this.sasia = sasia;
+        this.spinner = spinner;
+        this.radioGroup = radioGroup;
+        this.statusi = statusi;
         this.paguarRB = paguarRB;
         this.paPaguarRB = paPaguarRB;
         this.neProcesRB = neProcesRB;
-        this.statusi = statusi;
+        this.userID = userID;
     }
 
     public String getStatusi () {
@@ -144,6 +154,11 @@ public class NewOrders {
                 ", sasia='" + sasia + '\'' +
                 ", spinner='" + spinner + '\'' +
                 ", radioGroup='" + radioGroup + '\'' +
+                ", statusi='" + statusi + '\'' +
+                ", paguarRB='" + paguarRB + '\'' +
+                ", paPaguarRB='" + paPaguarRB + '\'' +
+                ", neProcesRB='" + neProcesRB + '\'' +
+                ", userID='" + userID + '\'' +
                 '}';
     }
 }

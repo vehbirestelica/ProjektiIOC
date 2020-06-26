@@ -7,6 +7,15 @@
     android:background="@drawable/porosiabackground"
     tools:context=".NewInvoiceActivity">
 
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:hint="ID e userit"
+        android:layout_above="@+id/tvInvTitle"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="-25dp"
+        android:id="@+id/userID"
+        android:visibility="invisible"/>
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -100,7 +109,7 @@
         android:textColorHint="@color/colorgray"
         android:textColorLink="@color/colorPrimary" />
 
-    <EditText
+    <Spinner
         android:id="@+id/derguesi"
         android:layout_width="310dp"
         android:layout_height="50dp"
@@ -110,6 +119,8 @@
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Derguesi"
+        android:entries="@array/spDerguesi"
+        android:spinnerMode="dropdown"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@color/colorgray"
