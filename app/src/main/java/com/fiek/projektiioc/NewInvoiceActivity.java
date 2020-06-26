@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import io.opencensus.internal.StringUtils;
+
 public class NewInvoiceActivity extends AppCompatActivity {
 
     public static final int CAMERA_PERM_CODE = 101;
@@ -84,6 +86,36 @@ public class NewInvoiceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (f == null){
                     Toast.makeText(NewInvoiceActivity.this,"Take a invoice photo",Toast.LENGTH_SHORT).show();
+                }
+                else if (title.getText().toString().isEmpty()){
+                    title.setError("Shenoni titullin");
+                    return;
+                }
+                else if (sum.getText().toString().isEmpty()){
+                    sum.setError("Shenoni shumen e faktures");
+                    return;
+                }
+                else if (sum.getText().toString().isEmpty() == false) {
+                    try{
+                        double num = Double.parseDouble(sum.getText().toString());
+                        if(num < 0){
+                            sum.setError("Shuma duhet te jete numer pozitiv");
+                            return;
+                        }
+
+                    } catch (NumberFormatException e) {
+                        sum.setError("Shuma duhet te jete numere");
+                        return;
+                    }
+
+                }
+                else if (comment.getText().toString().isEmpty()){
+                    comment.setError("Shenoni komentin");
+                    return;
+                }
+                else if(type.getSelectedItemPosition() == 0 )
+                {
+                    Toast.makeText(NewInvoiceActivity.this,"Zgjidhni llojin e faktures",Toast.LENGTH_SHORT).show();
                 }
                 else {
                 uploadImageToFirebase(f.getName(), contentUri);
@@ -208,10 +240,10 @@ public class NewInvoiceActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_LONG).show();
                 }
                 else {
-                    Toast.makeText(NewInvoiceActivity.this,"Failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewInvoiceActivity.this,"Failed to sent Invoice",Toast.LENGTH_LONG).show();
                 }
             }
         });
