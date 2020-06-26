@@ -28,10 +28,7 @@
                 android:id="@+id/m_llogaria"
                 android:icon="@drawable/ic_llogaria"
                 android:title="Llogaria" />
-            <item
-                android:id="@+id/m_settings"
-                android:icon="@drawable/ic_settings"
-                android:title="Preferencat" />
+
             <item
                 android:id="@+id/m_exit"
                 android:icon="@drawable/ic_exit"

@@ -85,6 +85,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88" />
 
+
     <EditText
         android:id="@+id/txtLEmail"
         android:layout_width="310dp"
@@ -105,11 +106,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <CheckBox
         android:id="@+id/checkmbaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorwhite"
         android:text="Me mbaj në mend"
@@ -119,7 +119,7 @@
         android:textCursorDrawable="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/btnLkyqu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLPassword"
         app:layout_constraintVertical_bias="0.0" />
@@ -149,14 +149,14 @@
         android:id="@+id/btnLkyqu"
         android:layout_width="150dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/button"
         android:text="Kyqu"
         android:textAllCaps="false"
         android:textColor="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/txtRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
@@ -167,9 +167,24 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.768" />
+
+    <TextView
+        android:id="@+id/forgetpasswordtxt"
+        android:layout_width="260dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Keni harruar Fjalekalimin ?"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryRedDarker"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
