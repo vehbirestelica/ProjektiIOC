@@ -44,7 +44,7 @@ public class BtnPorositeFragment extends Fragment {
         if(companyID>10000 && companyID<20000){
             btnOrderCompleted.setVisibility(View.VISIBLE);
         } else {
-            btnOrderCompleted.setVisibility(View.GONE);
+            //btnOrderCompleted.setVisibility(View.GONE);
         }
         btnOrderCompleted.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class BtnPorositeFragment extends Fragment {
         if(companyID>10000 && companyID<20000){
             btnOrderProcessing.setVisibility(View.VISIBLE);
         } else {
-            btnOrderProcessing.setVisibility(View.GONE);
+            //btnOrderProcessing.setVisibility(View.GONE);
         }
         btnOrderProcessing.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,7 @@ public class BtnPorositeFragment extends Fragment {
         if(companyID>10000 && companyID<20000){
             btnOrderNotPaid.setVisibility(View.VISIBLE);
         } else {
-            btnOrderNotPaid.setVisibility(View.GONE);
+           // btnOrderNotPaid.setVisibility(View.GONE);
         }
         btnOrderNotPaid.setOnClickListener(new View.OnClickListener() {
             @Override

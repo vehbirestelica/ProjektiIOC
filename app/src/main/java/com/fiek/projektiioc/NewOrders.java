@@ -2,12 +2,11 @@ package com.fiek.projektiioc;
 
 import com.google.firebase.firestore.ServerTimestamp;
 
-import java.util.Date;
-
 public class NewOrders {
     private String porosia;
     private String lokacioni;
-    private @ServerTimestamp Date dataLeshimit;
+    private @ServerTimestamp
+    String dataLeshimit;
     private String derguesi;
     private String marresi;
     private String sasia;
@@ -54,7 +53,8 @@ public class NewOrders {
     public NewOrders() {
     }
 
-    public NewOrders (String porosia, String lokacioni, Date dataLeshimit, String derguesi, String marresi, String sasia, String spinner, String radioGroup, String statusi, String paguarRB, String paPaguarRB, String neProcesRB, String userID) {
+    public NewOrders (String porosia, String lokacioni, String dataLeshimit, String derguesi, String marresi, String sasia,
+                      String spinner, String radioGroup, String statusi, String paguarRB, String paPaguarRB, String neProcesRB, String userID) {
         this.porosia = porosia;
         this.lokacioni = lokacioni;
         this.dataLeshimit = dataLeshimit;
@@ -94,11 +94,11 @@ public class NewOrders {
         this.lokacioni = lokacioni;
     }
 
-    public Date getDataLeshimit () {
+    public String getDataLeshimit () {
         return dataLeshimit;
     }
 
-    public void setDataLeshimit (Date dataLeshimit) {
+    public void setDataLeshimit (String dataLeshimit) {
         this.dataLeshimit = dataLeshimit;
     }
 
