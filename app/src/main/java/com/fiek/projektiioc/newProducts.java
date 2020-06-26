@@ -20,7 +20,6 @@ import java.net.URL;
 
 public class newProducts extends AppCompatActivity {
 
-    ListView listView;
 
     String productname , productcost , productcomment, relasedate;
     TextView productn , productc , relased , productcomm;
@@ -32,7 +31,7 @@ public class newProducts extends AppCompatActivity {
 
         productn = (TextView)findViewById(R.id.productname);
         productc = (TextView)findViewById(R.id.productcost);
-        productcomm = (TextView)findViewById(R.id.productcomment);
+       // productcomm = (TextView)findViewById(R.id.productcomment);
         relased = (TextView)findViewById(R.id.productrealsedate);
 
 
@@ -53,7 +52,7 @@ public class newProducts extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView(s);
                 } catch (JSONException e) {
@@ -91,14 +90,14 @@ public class newProducts extends AppCompatActivity {
             JSONObject obj = jsonArray.getJSONObject(i);
 
             productname = obj.getString("productname");
-            productcomment = obj.getString("productcomment");
+//            productcomment = obj.getString("productcomment");
             relasedate= obj.getString("releasdate");
             productcost = obj.getString("productcost");
 
             productn.append("\n" + productname);
-            productcomm.append("\n" + productcomment);
+//            productcomm.append("\n" + productcomment);
             relased.append("\n" + relasedate);
-            productc.append("\n" + productcost);
+           productc.append("\n" + productcost);
 
         }
     }
