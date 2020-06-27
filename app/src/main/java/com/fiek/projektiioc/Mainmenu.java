@@ -131,21 +131,22 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         builder.setCancelable(false);
         builder.setPositiveButton("Po",
                 new DialogInterface.OnClickListener() {
-                          @Override
-                            public void onClick(DialogInterface dialog,int which)
-                            {
-                                finish();
-                            }
-                        });
+                    @Override
+                    public void onClick(DialogInterface dialog,int which)
+                    {
+                        finish();
+
+                    }
+                });
 
         builder.setNegativeButton("Jo",
                 new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,int which)
-                            {
-                                dialog.cancel();
-                            }
-                        });
+                    @Override
+                    public void onClick(DialogInterface dialog,int which)
+                    {
+                        dialog.cancel();
+                    }
+                });
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
@@ -213,11 +214,32 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         }
         if(menuItem.getItemId() == R.id.m_exit){
 
-            FirebaseAuth.getInstance().signOut();
-//            finish();
-            Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
-            startActivity(intent);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Mainmenu.this);
+            // Set the message show for the Alert time
+            builder.setMessage("A deshironi te largoheni nga IOC?");
+            builder.setTitle("Paralajmerim!");
+            builder.setCancelable(false);
+            builder.setPositiveButton("Po",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,int which)
+                        {
+                            finish();
 
+                        }
+                    });
+
+            builder.setNegativeButton("Jo",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,int which)
+                        {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
 
         }
 
