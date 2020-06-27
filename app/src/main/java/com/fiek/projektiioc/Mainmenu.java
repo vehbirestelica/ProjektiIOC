@@ -157,15 +157,16 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         //Close menu when we click on it
-       new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+//       new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//                drawerLayout.closeDrawer(GravityCompat .START);
+//            }
+//        }, 200);
 
-                drawerLayout.closeDrawer(GravityCompat .START);
-            }
-        }, 200);
 
-       // drawerLayout.closeDrawer(GravityCompat .START);
+        drawerLayout.closeDrawer(GravityCompat .START);
 
         //load-i i fragemnteve
 
