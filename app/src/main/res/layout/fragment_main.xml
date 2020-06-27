@@ -12,7 +12,7 @@
         android:id="@+id/txtporositeefundit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/ubuntu"
         android:text="Porositë e fundit >>>"
@@ -709,13 +709,12 @@
         android:layout_width="170dp"
         android:layout_height="174dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorwhite"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -788,16 +787,15 @@
         android:layout_width="170dp"
         android:layout_height="174dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -866,20 +864,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="Kërko Porositë"
-        android:textColor="@color/colorDarkGray"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/imgShtoPorosi"
         android:layout_width="65dp"
@@ -914,31 +898,15 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         app:layout_constraintVertical_bias="1.0" />
 
-    <SearchView
-        android:id="@+id/searchView2"
-        android:layout_width="374dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/buttonwhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="91dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="76dp"
         android:src="@drawable/appicon"
-        app:layout_constraintBottom_toTopOf="@+id/searchView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgshtoPorosi"
