@@ -35,7 +35,7 @@ public class OrdersActivity extends AppCompatActivity {
     private ArrayList<String> arrayList = new ArrayList<String>();
     private ArrayList<String> arrayList1 = new ArrayList<String>();
     FirebaseUser auth;
-    TextView userID;
+    TextView userID,marresi;
     ImageView img;
     Orders order = new Orders();
 
@@ -51,11 +51,11 @@ public class OrdersActivity extends AppCompatActivity {
         userID = (TextView) findViewById(R.id.userID);
 
         mListView = (ListView) findViewById(R.id.listView);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView3,arrayList);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView1,arrayList);
         //final ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView2,arrayList1);
         mListView.setAdapter(arrayAdapter);
         //mListView.setAdapter(arrayAdapter1);
-
+        marresi=(TextView) findViewById(R.id.textView2);
 //        spinner = (Spinner) findViewById(R.id.derguesi);
 //        String derguesi = spinner.getSelectedItem().toString();
 
@@ -70,12 +70,12 @@ public class OrdersActivity extends AppCompatActivity {
             @Override
             public void onChildAdded (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 String emri = snapshot.child("derguesi").getValue(String.class);
-                String data = snapshot.child("data").getValue(String.class);
+                String data = snapshot.child("marresi").getValue(String.class);
                 String statusi = snapshot.child("statusi").getValue(String.class);
              //   img.setImageResource(R.drawable.mann);
                 String value = emri + " " + data + " " + statusi ;
 
-                arrayList.add(statusi);
+                arrayList.add(value);
  //               arrayList1.add(data);
 //                arrayList.add(data);
 //                arrayList.add(statusi);
