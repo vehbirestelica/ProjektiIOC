@@ -5,11 +5,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,7 +33,10 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     TextView forgetpassword;
+    CheckBox rememberMeCheckBox;
 
+    SharedPreferences mPrefereces;
+    SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +50,13 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         btnLkyqu = findViewById(R.id.btnLkyqu);
         forgetpassword = findViewById(R.id.forgetpasswordtxt);
+        rememberMeCheckBox = findViewById(R.id.checkRemeberMe);
+
+        mPrefereces = getSharedPreferences("com.fiek.projektiioc", Context.MODE_PRIVATE);
+        mEditor = mPrefereces.edit();
 
         fAuth.getInstance().signOut();
-
+        checkSharedPreferences();
         // Nese useri ekziston
 //        if(fAuth.getCurrentUser() != null){
 //            Intent intent = new Intent(LoginActivity.this,Mainmenu.class);
@@ -69,6 +79,26 @@ public class LoginActivity extends AppCompatActivity {
                 if (password.length()<6){
                     lPassword.setError("Passwordi duhet të permbaj së paku 6 karaktere");
                     return;
+                }
+                if(rememberMeCheckBox.isChecked()){
+                    mEditor.putString(getString(R.string.checkbox),"True");
+                    mEditor.commit();
+
+                    mEditor.putString(getString(R.string.loginemail), email);
+                    mEditor.commit();
+
+                    mEditor.putString(getString(R.string.loginpassword), password);
+                    mEditor.commit();
+                }else{
+
+                    mEditor.putString(getString(R.string.checkbox),"False");
+                    mEditor.commit();
+
+                    mEditor.putString(getString(R.string.loginemail), "");
+                    mEditor.commit();
+
+                    mEditor.putString(getString(R.string.loginpassword), "");
+                    mEditor.commit();
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -146,6 +176,21 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void checkSharedPreferences(){
+        String checkbox = mPrefereces.getString(getString(R.string.checkbox),"False");
+        String email = mPrefereces.getString(getString(R.string.loginemail),"");
+        String password = mPrefereces.getString(getString(R.string.loginpassword),"");
+
+        lEmail.setText(email);
+        lPassword.setText(password);
+
+        if(checkbox.equals("True")){
+            rememberMeCheckBox.setChecked(true);
+        }else{
+            rememberMeCheckBox.setChecked(false);
+        }
     }
 
     @Override

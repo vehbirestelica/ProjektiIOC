@@ -134,7 +134,8 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
                     @Override
                     public void onClick(DialogInterface dialog,int which)
                     {
-                        finish();
+                        Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
+                        startActivity(intent);
 
                     }
                 });
@@ -224,7 +225,8 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
                         @Override
                         public void onClick(DialogInterface dialog,int which)
                         {
-                            finish();
+                            Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
+                            startActivity(intent);
 
                         }
                     });
