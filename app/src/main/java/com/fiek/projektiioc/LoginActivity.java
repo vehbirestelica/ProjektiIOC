@@ -1,5 +1,6 @@
 package com.fiek.projektiioc;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLkyqu = findViewById(R.id.btnLkyqu);
         forgetpassword = findViewById(R.id.forgetpasswordtxt);
 
+        fAuth.getInstance().signOut();
+
         // Nese useri ekziston
 //        if(fAuth.getCurrentUser() != null){
 //            Intent intent = new Intent(LoginActivity.this,Mainmenu.class);
@@ -75,9 +78,11 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+
                             Toast.makeText(LoginActivity.this,"Jeni kyqur me Sukses",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this,Mainmenu.class);
                             startActivity(intent);
+                            progressBar.setVisibility(View.GONE);
                         }
                         else{
                             Toast.makeText(LoginActivity.this,"Gabim në kyqje "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
@@ -141,5 +146,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 }
