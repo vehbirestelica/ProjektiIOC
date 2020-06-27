@@ -102,6 +102,20 @@ public class NewInvoiceActivity extends AppCompatActivity {
                             sum.setError("Shuma duhet te jete numer pozitiv");
                             return;
                         }
+                        else if (comment.getText().toString().isEmpty()){
+                            comment.setError("Shenoni komentin");
+                            return;
+                        }
+                        else if(type.getSelectedItemPosition() == 0 )
+                        {
+                            Toast.makeText(NewInvoiceActivity.this,"Zgjidhni llojin e faktures",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            uploadImageToFirebase(f.getName(), contentUri);
+                            //Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
+
+                            onBackPressed();
+                        }
 
                     } catch (NumberFormatException e) {
                         sum.setError("Shuma duhet te jete numere");
@@ -109,20 +123,7 @@ public class NewInvoiceActivity extends AppCompatActivity {
                     }
 
                 }
-                else if (comment.getText().toString().isEmpty()){
-                    comment.setError("Shenoni komentin");
-                    return;
-                }
-                else if(type.getSelectedItemPosition() == 0 )
-                {
-                    Toast.makeText(NewInvoiceActivity.this,"Zgjidhni llojin e faktures",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                uploadImageToFirebase(f.getName(), contentUri);
-                    //Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_SHORT).show();
 
-                    onBackPressed();
-                }
             }
         });
 
