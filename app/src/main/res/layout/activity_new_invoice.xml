@@ -139,6 +139,7 @@
                     android:layout_marginBottom="68dp"
                     android:background="@drawable/button"
                     android:text="Dergo"
+                    android:textColor="@color/colorwhite"
                     android:visibility="visible" />
 
             </RelativeLayout>

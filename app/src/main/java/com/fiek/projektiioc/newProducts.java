@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -19,13 +20,20 @@ import java.net.URL;
 
 public class newProducts extends AppCompatActivity {
 
-    ListView listView;
+
+    String productname , productcost , productcomment, relasedate;
+    TextView productn , productc , relased , productcomm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_products);
-        listView = (ListView) findViewById(R.id.listView);
+
+        productn = (TextView)findViewById(R.id.productname);
+        productc = (TextView)findViewById(R.id.productcost);
+       // productcomm = (TextView)findViewById(R.id.productcomment);
+        relased = (TextView)findViewById(R.id.productrealsedate);
+
 
         //duhet te shkruhet ip adresa lokale IP4
         getJSON("http://192.168.0.109/products/products.php");
@@ -44,7 +52,7 @@ public class newProducts extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView(s);
                 } catch (JSONException e) {
@@ -61,7 +69,7 @@ public class newProducts extends AppCompatActivity {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
                     String json;
                     while ((json = bufferedReader.readLine()) != null) {
-                        sb.append(json + "\n");
+                        sb.append(json).append("\n");
                     }
                     return sb.toString().trim();
                 } catch (Exception e) {
@@ -75,16 +83,22 @@ public class newProducts extends AppCompatActivity {
 
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
-        String[] heroes = new String[jsonArray.length()];
+
+      //  String[] products = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
+
             JSONObject obj = jsonArray.getJSONObject(i);
-            heroes[i] = obj.getString("productid");
-            heroes[i] = obj.getString("productname");
-            heroes[i] = obj.getString("productcost'");
-            heroes[i] = obj.getString("releasdate");
-            heroes[i] = obj.getString("productcomment");
+
+            productname = obj.getString("productname");
+//            productcomment = obj.getString("productcomment");
+            relasedate= obj.getString("releasdate");
+            productcost = obj.getString("productcost");
+
+            productn.append("\n" + productname);
+//            productcomm.append("\n" + productcomment);
+            relased.append("\n" + relasedate);
+           productc.append("\n" + productcost);
+
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, heroes);
-        listView.setAdapter(arrayAdapter);
     }
 }

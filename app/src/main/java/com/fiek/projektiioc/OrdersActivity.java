@@ -3,6 +3,7 @@ package com.fiek.projektiioc;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,8 +33,10 @@ public class OrdersActivity extends AppCompatActivity {
     private List<Orders> orders = new ArrayList<>();
     Spinner spinner;
     private ArrayList<String> arrayList = new ArrayList<String>();
+    private ArrayList<String> arrayList1 = new ArrayList<String>();
     FirebaseUser auth;
     TextView userID;
+    ImageView img;
     Orders order = new Orders();
 
     private ListView mListView;
@@ -46,10 +49,12 @@ public class OrdersActivity extends AppCompatActivity {
 //        mDatabase = FirebaseDatabase.getInstance();
 //        myRef = mDatabase.getReference("Orders");
         userID = (TextView) findViewById(R.id.userID);
-        String uuserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         mListView = (ListView) findViewById(R.id.listView);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView3,arrayList);
+        //final ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView2,arrayList1);
         mListView.setAdapter(arrayAdapter);
+        //mListView.setAdapter(arrayAdapter1);
 
 //        spinner = (Spinner) findViewById(R.id.derguesi);
 //        String derguesi = spinner.getSelectedItem().toString();
@@ -65,13 +70,17 @@ public class OrdersActivity extends AppCompatActivity {
             @Override
             public void onChildAdded (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 String emri = snapshot.child("derguesi").getValue(String.class);
-                String data = snapshot.child("marresi").getValue(String.class);
+                String data = snapshot.child("data").getValue(String.class);
                 String statusi = snapshot.child("statusi").getValue(String.class);
-                String value = emri + " \t\t\t\t\t\t\t\t\t\t " + data + " \t\t\t\t\t\t\t\t\t\t\t" + statusi;
-                arrayList.add(value);
+             //   img.setImageResource(R.drawable.mann);
+                String value = emri + " " + data + " " + statusi ;
+
+                arrayList.add(statusi);
+ //               arrayList1.add(data);
 //                arrayList.add(data);
 //                arrayList.add(statusi);
                 arrayAdapter.notifyDataSetChanged();
+                //arrayAdapter1.notifyDataSetChanged();
             }
 
             @Override
@@ -95,4 +104,22 @@ public class OrdersActivity extends AppCompatActivity {
             }
         });
     }
+
+//    public View getView(int position, View convertView, ViewGroup parent){
+//        OrderListAdapter.ViewHolder holder = null;
+//        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        convertView = inflater.inflate(R.layout.adapterview,null);
+//
+//        holder.emri=(TextView)convertView.findViewById(R.id.textView1);
+//        holder.data=(TextView)convertView.findViewById(R.id.textView2);
+//        holder.statusi=(TextView)convertView.findViewById(R.id.textView3);
+//        convertView.setTag(holder);
+//
+//        Orders orders = getView(position);
+//
+//        holder.emri.setText(Orders.getEmri());
+//
+//        return convertView;
+//    }
+
 }

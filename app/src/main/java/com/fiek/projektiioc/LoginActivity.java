@@ -1,8 +1,10 @@
 package com.fiek.projektiioc;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtRegjistrohubtn;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    TextView forgetpassword;
 
 
     @Override
@@ -37,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar =  findViewById(R.id.LprogressBar);
         fAuth = FirebaseAuth.getInstance();
         btnLkyqu = findViewById(R.id.btnLkyqu);
+        forgetpassword = findViewById(R.id.forgetpasswordtxt);
 
         // Nese useri ekziston
 //        if(fAuth.getCurrentUser() != null){
@@ -90,6 +96,45 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+        forgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText resetMail = new EditText(v.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Ndrysho Passwordin ?");
+                passwordResetDialog.setMessage("Shkruaj Email-in tend per ta marre linkun e ndryshimit te passwordit.");
+
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Ne rregull", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ///
+
+                        String mail = resetMail.getText().toString();
+                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(LoginActivity.this, "Linku për ta ndryshuar passwordin është dërguar në Email-in tënd", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(LoginActivity.this, "Error!...Linku nuk është derguar."+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                });
+                passwordResetDialog.setNegativeButton("Kthehu", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //close
+                    }
+                });
+              passwordResetDialog.create().show();
             }
         });
 

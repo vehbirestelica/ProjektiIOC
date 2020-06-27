@@ -21,9 +21,11 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -31,6 +33,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import javax.annotation.Nullable;
 
@@ -44,10 +49,13 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
+    ImageView profileimg;
+
     TextView Perdoruesi,Roli,Emaili;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    StorageReference storageReference;
     String userId;
     int companyId;
 
@@ -66,11 +74,22 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         Perdoruesi = header.findViewById(R.id.txtHPerdoruesi);
         Roli = header.findViewById(R.id.txtHRoli);
         Emaili = header.findViewById(R.id.txtHEmaili);
+        profileimg = header.findViewById(R.id.imgProfili);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
         userId = fAuth.getCurrentUser().getUid();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
+        //load image into imageview
+        StorageReference profileref = storageReference.child("users/"+fAuth.getInstance().getCurrentUser().getUid()+"/profile.jpg");
+        profileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileimg);
+            }
+        });
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -187,10 +206,9 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         }
         if(menuItem.getItemId() == R.id.m_llogaria){
 
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.containerfragment,new Llogaria());
-            fragmentTransaction.commit();
+            Intent intent = new Intent(Mainmenu.this,LlogariaA.class);
+            startActivity(intent);
+
 
         }
         if(menuItem.getItemId() == R.id.m_exit){

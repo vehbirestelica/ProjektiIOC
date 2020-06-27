@@ -36,7 +36,7 @@ public class NotPaidOrders extends AppCompatActivity {
         myRef = mDatabase.getReference("Orders");
 
         mListView = (ListView) findViewById(R.id.listView);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.adapterview_notpaid,R.id.textView3,arrayList);
         mListView.setAdapter(arrayAdapter);
 
         FirebaseUser auth;
@@ -53,7 +53,7 @@ public class NotPaidOrders extends AppCompatActivity {
                 String data = snapshot.child("marresi").getValue(String.class);
                 String statusi = snapshot.child("statusi").getValue(String.class);
                 String value = emri + " \t\t\t\t\t\t\t\t\t\t " + data + " \t\t\t\t\t\t\t\t\t\t\t" + statusi;
-                arrayList.add(value);
+                arrayList.add(statusi);
 //                arrayList.add(data);
 //                arrayList.add(statusi);
                 arrayAdapter.notifyDataSetChanged();

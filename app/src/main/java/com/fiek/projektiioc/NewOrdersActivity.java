@@ -35,7 +35,6 @@ public class NewOrdersActivity extends AppCompatActivity {
         lokacioni = (EditText) findViewById(R.id.lokacioni);
         dataLeshimit = (EditText) findViewById(R.id.txtInvSum);
         marresi = (EditText) findViewById(R.id.marresi);
-        //derguesi = (EditText) findViewById(R.id.derguesi);
         spinner = findViewById(R.id.caktoSasineSpinner);
         spinnerDerguesi = findViewById(R.id.derguesi);
         paguar = findViewById(R.id.radio3);
@@ -60,12 +59,15 @@ public class NewOrdersActivity extends AppCompatActivity {
                     newOrders.setStatusi(neProces.getText().toString());
                 }
 
+//                String dataLeshimit = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
                 newOrders.setPorosia(porosia.getText().toString().trim());
                 newOrders.setLokacioni(lokacioni.getText().toString().trim());
                 newOrders.setSasia(spinner.getSelectedItem().toString());
                 newOrders.setDerguesi(spinnerDerguesi.getSelectedItem().toString().trim());
                 newOrders.setMarresi(marresi.getText().toString().trim());
                 newOrders.setUserID(currentUser.getUid());
+                newOrders.setDataLeshimit(dataLeshimit.getText().toString());
                 dbref.push().setValue(newOrders);
                 Toast.makeText(NewOrdersActivity.this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
             }
