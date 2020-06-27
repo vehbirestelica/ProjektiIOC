@@ -53,6 +53,15 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
         String statusi=getItem(position).getStatusi();
         String imgURL = getItem(position).getImgURL();
 
+//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        View adapterView = inflater.inflate(R.layout.adapterview, parent, false);
+//        TextView tvEmri = (TextView) adapterView.findViewById(R.id.textView1);
+//        TextView tvmarresi = (TextView) adapterView.findViewById(R.id.textView2);
+//        TextView tvstatusi = (TextView) adapterView.findViewById(R.id.textView3);
+//
+//        return adapterView;
+
+
 //        //create the orders object with infos
 //        Orders orders = new Orders(emri, data, statusi);
 
@@ -71,7 +80,6 @@ public class OrderListAdapter extends ArrayAdapter<Orders> {
             holder.emri=(TextView)convertView.findViewById(R.id.textView1);
             holder.data=(TextView)convertView.findViewById(R.id.textView2);
             holder.statusi=(TextView)convertView.findViewById(R.id.textView3);
-            holder.image = (ImageView) convertView.findViewById(R.id.image);
 
             result=convertView;
 
