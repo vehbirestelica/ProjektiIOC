@@ -107,7 +107,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkmbaje"
+        android:id="@+id/checkRemeberMe"
         android:layout_width="152dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"

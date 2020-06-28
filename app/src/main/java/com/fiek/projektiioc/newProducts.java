@@ -52,7 +52,7 @@ public class newProducts extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-               // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+              // Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     loadIntoListView(s);
                 } catch (JSONException e) {
@@ -84,20 +84,20 @@ public class newProducts extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
 
-      //  String[] products = new String[jsonArray.length()];
+        String[] products = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
 
             JSONObject obj = jsonArray.getJSONObject(i);
 
             productname = obj.getString("productname");
-//            productcomment = obj.getString("productcomment");
+//          productcomment = obj.getString("productcomment");
             relasedate= obj.getString("releasdate");
             productcost = obj.getString("productcost");
 
             productn.append("\n" + productname);
-//            productcomm.append("\n" + productcomment);
+//          productcomm.append("\n" + productcomment);
             relased.append("\n" + relasedate);
-           productc.append("\n" + productcost);
+            productc.append("\n" + productcost);
 
         }
     }
