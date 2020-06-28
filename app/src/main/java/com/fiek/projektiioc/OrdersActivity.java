@@ -1,12 +1,14 @@
 package com.fiek.projektiioc;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,12 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,18 +29,17 @@ import java.util.List;
 public class OrdersActivity extends AppCompatActivity {
     private static final String TAG = "activity order";
 
-    EditText emri, data, statusi;
     private FirebaseDatabase mDatabase;
-    private DatabaseReference myRef, mRef;
-    private List<Orders> orders = new ArrayList<>();
+    private DatabaseReference myRef;
     Spinner spinner;
     private ArrayList<String> arrayList = new ArrayList<String>();
     private ArrayList<String> arrayList1 = new ArrayList<String>();
     FirebaseUser auth;
     TextView userID,marresi;
     ImageView img;
-    Orders order = new Orders();
-
+    List<NewOrders> ordersList;
+    private DatabaseReference mRef;
+    ListViewOnClickListener onClick = new ListViewOnClickListener();
     private ListView mListView;
 
     @Override
@@ -46,56 +47,42 @@ public class OrdersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
-//        mDatabase = FirebaseDatabase.getInstance();
-//        myRef = mDatabase.getReference("Orders");
-        userID = (TextView) findViewById(R.id.userID);
+        userID = findViewById(R.id.userID);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView1,arrayList);
-        //final ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this,R.layout.adapterview,R.id.textView2,arrayList1);
-        mListView.setAdapter(arrayAdapter);
-        //mListView.setAdapter(arrayAdapter1);
-        marresi=(TextView) findViewById(R.id.textView2);
-//        spinner = (Spinner) findViewById(R.id.derguesi);
-//        String derguesi = spinner.getSelectedItem().toString();
+        ordersList = new ArrayList<>();
+
+        mListView = findViewById(R.id.listView);
 
         auth = FirebaseAuth.getInstance().getCurrentUser();
         String currentUser = auth.getUid();
 
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-        Query query  = FirebaseDatabase.getInstance().getReference("addOrder")
-                .orderByChild("statusi")
-                .equalTo("Paguar");
-        query.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String emri = snapshot.child("derguesi").getValue(String.class);
-                String data = snapshot.child("marresi").getValue(String.class);
-                String statusi = snapshot.child("statusi").getValue(String.class);
-             //   img.setImageResource(R.drawable.mann);
-                String value = emri + " " + data + " " + statusi ;
-
-                arrayList.add(value);
- //               arrayList1.add(data);
-//                arrayList.add(data);
-//                arrayList.add(statusi);
-                arrayAdapter.notifyDataSetChanged();
-                //arrayAdapter1.notifyDataSetChanged();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent onClickintent = new Intent(OrdersActivity.this,ListViewOnClickListener.class);
+                startActivity(onClickintent);
+                Toast.makeText(OrdersActivity.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
             }
+        });
+    }
 
+    @Override
+    protected void onStart () {
+        super.onStart();
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Paguar");
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildChanged (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            public void onDataChange (@NonNull DataSnapshot snapshot) {
+                ordersList.clear();
+                for(DataSnapshot ordersSnapshot : snapshot.getChildren()){
+                    NewOrders orders = ordersSnapshot.getValue(NewOrders.class);
 
-            }
+                    ordersList.add(orders);
+                }
 
-            @Override
-            public void onChildRemoved (@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved (@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+                ListAdapter adapter = new ListAdapter(OrdersActivity.this, ordersList);
+                mListView.setAdapter(adapter);
             }
 
             @Override
@@ -104,22 +91,4 @@ public class OrdersActivity extends AppCompatActivity {
             }
         });
     }
-
-//    public View getView(int position, View convertView, ViewGroup parent){
-//        OrderListAdapter.ViewHolder holder = null;
-//        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        convertView = inflater.inflate(R.layout.adapterview,null);
-//
-//        holder.emri=(TextView)convertView.findViewById(R.id.textView1);
-//        holder.data=(TextView)convertView.findViewById(R.id.textView2);
-//        holder.statusi=(TextView)convertView.findViewById(R.id.textView3);
-//        convertView.setTag(holder);
-//
-//        Orders orders = getView(position);
-//
-//        holder.emri.setText(Orders.getEmri());
-//
-//        return convertView;
-//    }
-
 }

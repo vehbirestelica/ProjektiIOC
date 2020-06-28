@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListViewOnClickListener">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marresi:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="253dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="99dp"
+        android:layout_height="36dp"
+        android:text="Derguesi:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <TextView
+        android:id="@+id/sasia"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Sasia"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="82dp" />
+
+    <TextView
+        android:id="@+id/porosia"
+        android:layout_width="119dp"
+        android:layout_height="45dp"
+        android:text="porosia"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <TextView
+        android:id="@+id/derguesi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <TextView
+        android:id="@+id/marresi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <TextView
+        android:id="@+id/sasiax"
+        android:layout_width="34dp"
+        android:layout_height="46dp"
+        android:text="X"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="82dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

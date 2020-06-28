@@ -18,8 +18,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".LlogariaA"></activity>
-        <activity android:name=".All_InvoicesActivity"></activity>
+        <activity android:name=".ListViewOnClickListener"></activity>
+        <activity android:name=".LlogariaA" />
+        <activity android:name=".All_InvoicesActivity" />
         <activity android:name=".newProducts" />
         <activity android:name=".Invoice_details" />
         <activity android:name=".MyInvoiceActivity" />
