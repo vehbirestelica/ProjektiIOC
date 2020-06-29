@@ -23,7 +23,7 @@ import java.util.List;
 public class MyOrders extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
     private DatabaseReference myRef;
-    private List<Orders> orders = new ArrayList<>();
+    private List<NewOrdersActivity> orders = new ArrayList<>();
     private ArrayList<String> arrayList = new ArrayList<String>();
 
     private ListView mListView;

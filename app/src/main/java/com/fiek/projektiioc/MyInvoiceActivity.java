@@ -20,6 +20,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class MyInvoiceActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
@@ -55,7 +58,14 @@ public class MyInvoiceActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull InvoicesViewHolder invoicesViewHolder, int i, @NonNull Invoice invoice) {
                 invoicesViewHolder.list_title.setText(invoice.getInvTitle());
-                invoicesViewHolder.list_sum.setText(invoice.getInvSum());
+                invoicesViewHolder.list_sum.setText(invoice.getInvSum()+"€");
+                Date timestamp =new Date(invoice.getTimestamp().getTime());
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(timestamp);
+                int year = cal.get(Calendar.YEAR);
+                int month = Integer.parseInt(String.valueOf(cal.get(Calendar.MONTH)))+1;
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                invoicesViewHolder.list_ts.setText(day+"/"+month+"/"+year);
             }
         };
          mMyInvoices_list.setHasFixedSize(true);
@@ -70,12 +80,14 @@ public class MyInvoiceActivity extends AppCompatActivity {
 
         private TextView list_title;
         private TextView list_sum;
+        private TextView list_ts;
 
         public InvoicesViewHolder(@NonNull View itemView) {
             super(itemView);
 
             list_title = itemView.findViewById(R.id.allinv_item_title);
             list_sum = itemView.findViewById(R.id.allinv_item_sum);
+            list_ts = itemView.findViewById(R.id.myinv_item_date);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

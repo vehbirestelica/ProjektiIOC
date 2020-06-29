@@ -78,6 +78,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                     return;
                 }
+                if(Integer.parseInt(companiId)<10000 || Integer.parseInt(companiId)>100000){
+                    rCompaniID.setError("Id-ja e kompanis eshte gabim");
+
+                    return;
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 

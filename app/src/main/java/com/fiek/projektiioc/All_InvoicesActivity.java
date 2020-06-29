@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class All_InvoicesActivity extends AppCompatActivity {
     private FirebaseFirestore db;
@@ -54,8 +56,15 @@ public class All_InvoicesActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull All_InvoicesActivity.InvoicesViewHolder invoicesViewHolder, int i, @NonNull Invoice invoice) {
                 invoicesViewHolder.list_title.setText(invoice.getInvTitle());
-                invoicesViewHolder.list_sum.setText(invoice.getInvSum());
+                invoicesViewHolder.list_sum.setText(invoice.getInvSum()+"€");
                 invoicesViewHolder.list_usersname.setText(invoice.getUsersName());
+                Date timestamp =new Date(invoice.getTimestamp().getTime());
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(timestamp);
+                int year = cal.get(Calendar.YEAR);
+                int month = Integer.parseInt(String.valueOf(cal.get(Calendar.MONTH)))+1;
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                invoicesViewHolder.list_date.setText(day+"/"+month+"/"+year);
             }
         };
         mAllMyInvoices_list.setHasFixedSize(true);
@@ -71,6 +80,7 @@ public class All_InvoicesActivity extends AppCompatActivity {
         private TextView list_title;
         private TextView list_sum;
         private TextView list_usersname;
+        private TextView list_date;
 
         public InvoicesViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +88,7 @@ public class All_InvoicesActivity extends AppCompatActivity {
             list_title = itemView.findViewById(R.id.allinv_item_title);
             list_sum = itemView.findViewById(R.id.allinv_item_sum);
             list_usersname = itemView.findViewById(R.id.allinv_item_usersname);
+            list_date = itemView.findViewById(R.id.allinv_item_date);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
