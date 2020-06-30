@@ -214,6 +214,17 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
 
 
         }
+
+
+
+        if(menuItem.getItemId() == R.id.m_ndihma){
+
+            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+            callIntent.setData(Uri.parse("tel: +38344558745"));
+            startActivity(callIntent);
+
+
+        }
         if(menuItem.getItemId() == R.id.m_exit){
 
             AlertDialog.Builder builder = new AlertDialog.Builder(Mainmenu.this);
