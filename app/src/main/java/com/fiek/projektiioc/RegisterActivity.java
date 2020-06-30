@@ -69,6 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
                     rEmail.setError("Emaili duhet të vendoset");
                     return;
                 }
+                if (name.isEmpty()){
+                    rName.setError("Emri duhet të vendoset");
+                    return;
+                }
                 if (password.isEmpty()){
                     rPassword.setError("Passwordi duhet të vendoset");
                     return;
