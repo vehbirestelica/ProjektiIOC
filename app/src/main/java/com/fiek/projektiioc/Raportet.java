@@ -2,63 +2,136 @@ package com.fiek.projektiioc;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Raportet#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+
 public class Raportet extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public Raportet() {
-        // Required empty public constructor
-    }
+    TextView TotalOrders;
+    TextView TotalProccesing;
+    TextView TotalPaid;
+    TextView TotalNotPaid;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Raportet.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Raportet newInstance(String param1, String param2) {
-        Raportet fragment = new Raportet();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private DatabaseReference mDatabase;
+    private int countdata;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_raportet, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_raportet, container, false);
+
+        TotalNotPaid = (TextView)view.findViewById(R.id.notpaidOrderstxt);
+        TotalPaid = (TextView) view.findViewById(R.id.paidOrderstxt);
+        TotalOrders =(TextView)view.findViewById(R.id.totalOrderstxt);
+        TotalProccesing =(TextView) view.findViewById(R.id.processingOrderstxt);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Pa Paguar");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    countdata =(int) snapshot.getChildrenCount();
+                    TotalNotPaid.setText(Integer.toString(countdata));
+
+                }
+                else {
+                    TotalNotPaid.setText("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        Query query2 = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Paguar");
+
+        query2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    countdata =(int) snapshot.getChildrenCount();
+                    TotalPaid.setText(Integer.toString(countdata));
+
+                }
+                else {
+                    TotalNotPaid.setText("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        Query query3 = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Ne Proces");
+
+        query3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    countdata =(int) snapshot.getChildrenCount();
+                    TotalProccesing.setText(Integer.toString(countdata));
+
+                }
+                else {
+                    TotalNotPaid.setText("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        Query query4 = FirebaseDatabase.getInstance().getReference("addOrder");
+
+        query4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    countdata =(int) snapshot.getChildrenCount();
+                    TotalOrders.setText(Integer.toString(countdata));
+
+                }
+                else {
+                    TotalNotPaid.setText("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
+        return  view;
     }
 }
