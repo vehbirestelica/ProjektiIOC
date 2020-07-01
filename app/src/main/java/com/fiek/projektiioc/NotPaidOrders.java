@@ -56,7 +56,7 @@ public class NotPaidOrders extends AppCompatActivity {
     @Override
     protected void onStart () {
         super.onStart();
-        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Pa Paguar");
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Pa Paguar").limitToLast(50);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange (@NonNull DataSnapshot snapshot) {

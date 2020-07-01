@@ -58,7 +58,7 @@ public class ProcessingOrders extends AppCompatActivity {
     @Override
     protected void onStart () {
         super.onStart();
-        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Ne Proces");
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Ne Proces").limitToLast(50);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange (@NonNull DataSnapshot snapshot) {

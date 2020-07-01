@@ -71,7 +71,7 @@ public class OrdersActivity extends AppCompatActivity {
     @Override
     protected void onStart () {
         super.onStart();
-        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Paguar");
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Paguar").limitToLast(50);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange (@NonNull DataSnapshot snapshot) {

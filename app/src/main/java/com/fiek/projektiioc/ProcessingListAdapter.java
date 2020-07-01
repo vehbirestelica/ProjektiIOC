@@ -30,12 +30,12 @@ public class ProcessingListAdapter extends ArrayAdapter<NewOrders> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.adapterview_processing, null, true);
         TextView tvDerguesi = (TextView) listViewItem.findViewById(R.id.textView1);
-        TextView tvMarresi = (TextView) listViewItem.findViewById(R.id.textView2);
+        TextView tvLokacioni = (TextView) listViewItem.findViewById(R.id.textView2);
         TextView tvStatusi = (TextView) listViewItem.findViewById(R.id.textView3);
 
         NewOrders orders = ordersList.get(position);
-        tvMarresi.setText(orders.getDerguesi());
-        tvDerguesi.setText(orders.getMarresi());
+        tvDerguesi.setText(orders.getDerguesi());
+        tvLokacioni.setText(orders.getLokacioni());
         tvStatusi.setText(orders.getStatusi());
 
         Animation animation = AnimationUtils.loadAnimation(context,R.anim.slide_left);
