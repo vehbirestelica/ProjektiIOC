@@ -6,66 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".ListViewOnClickListener">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marresi:"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="253dp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="99dp"
-        android:layout_height="36dp"
-        android:text="Derguesi:"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="202dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/details"
+        android:layout_width="350dp"
+        android:layout_height="546dp"
+        android:layout_marginTop="62dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/sasia"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:text="Sasia"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="82dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/porosia"
-        android:layout_width="119dp"
-        android:layout_height="45dp"
-        android:text="porosia"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="83dp" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Porosite"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/derguesi2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="201dp" />
+            <TextView
+                android:id="@+id/inv_det_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Titulli"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/marresi2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="246dp" />
+            <TextView
+                android:id="@+id/porosia2"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:layout_marginLeft="150dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/sasiax"
-        android:layout_width="34dp"
-        android:layout_height="46dp"
-        android:text="X"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="82dp" />
+            <TextView
+                android:id="@+id/sasia2"
+                android:layout_width="159dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="-39dp"
+                android:text="TextView"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/inv_type_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Lloji"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/derguesi2"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/inv_sum_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Shuma"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/marresi2"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/inv_comm_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="Koment"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/lokacioni2"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/inv_invid_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:text="ID e Faktures dhe Foto Deshmia"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorlightgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/statusi2"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:paddingStart="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,9 +33,6 @@ public class MyOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
-        mDatabase = FirebaseDatabase.getInstance();
-        myRef = mDatabase.getReference("Orders");
-
         mListView = (ListView) findViewById(R.id.listView);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
         mListView.setAdapter(arrayAdapter);

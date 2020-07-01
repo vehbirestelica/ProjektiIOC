@@ -61,6 +61,7 @@ public class OrdersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent onClickintent = new Intent(OrdersActivity.this,ListViewOnClickListener.class);
+                onClickintent.putExtra("orders",mListView.getItemAtPosition(position).toString());
                 startActivity(onClickintent);
                 Toast.makeText(OrdersActivity.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
             }
