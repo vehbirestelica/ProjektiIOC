@@ -2,6 +2,7 @@ package com.fiek.projektiioc;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -124,7 +126,13 @@ public class LlogariaA extends AppCompatActivity {
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                //Toast.makeText(LlogariaA.this, "Profili eshte perditesuar :) ", Toast.LENGTH_SHORT).show();
+
+
+                View contextView = findViewById(android.R.id.content);
+                // Make and display Snackbar
+                Snackbar.make(contextView, "Profili është përditesuar :)", Snackbar.LENGTH_SHORT)
+                        .show();
+
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -136,7 +144,10 @@ public class LlogariaA extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LlogariaA.this, "Profili nuk eshte perditesuar !!! ", Toast.LENGTH_SHORT).show();
+                View contextView = findViewById(android.R.id.content);
+                // Make and display Snackbar
+                Snackbar.make(contextView, "Profili nuk është përditesuar !", Snackbar.LENGTH_SHORT)
+                        .show();
             }
         });
 
