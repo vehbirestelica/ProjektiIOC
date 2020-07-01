@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,10 +21,15 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +43,7 @@ public class NewOrdersActivity extends AppCompatActivity {
     RadioButton paguar, paPaguar, neProces;
     TextView userID;
     Button BtnGoogleMapPick;
-
+    RelativeLayout newOrderLayout;
 
 
     @Override
@@ -78,6 +85,7 @@ public class NewOrdersActivity extends AppCompatActivity {
         });
 //////////////////////////////////////////////////////////////////////////////////
 
+        newOrderLayout = findViewById(R.id.newOrderLayout);
 
         btnregjistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,12 +109,43 @@ public class NewOrdersActivity extends AppCompatActivity {
                 newOrders.setUserID(currentUser.getUid());
                 newOrders.setDataLeshimit(dataLeshimit.getText().toString());
                 dbref.push().setValue(newOrders);
-                Toast.makeText(NewOrdersActivity.this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
+                showSnackbar();
+//                Toast.makeText(NewOrdersActivity.this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    public void showSnackbar(){
+        Snackbar.make(newOrderLayout,"Porosia e Re u shtua.",Snackbar.LENGTH_INDEFINITE)
+                .setAction("UNDO", new View.OnClickListener() {
+                    @Override
+                    public void onClick (View v) {
+                        onStart();
+                    Snackbar snackbar = Snackbar.make(newOrderLayout,"Porosia u anulua!", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                    }
+                })
+                .setActionTextColor(getResources().getColor(R.color.colorBlack))
+                .setDuration(5000)
+                .show();
+    }
+    @Override
+    protected void onStart () {
+        super.onStart();
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").limitToLast(1);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange (@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    dataSnapshot.getRef().removeValue();
+                }
+            }
 
+            @Override
+            public void onCancelled (@NonNull DatabaseError error) {
 
+            }
+        });
     }
 
 

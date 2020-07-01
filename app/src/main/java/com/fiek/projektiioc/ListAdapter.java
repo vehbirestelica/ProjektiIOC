@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -36,6 +38,10 @@ public class ListAdapter extends ArrayAdapter<NewOrders> {
         tvMarresi.setText(orders.getDerguesi());
         tvDerguesi.setText(orders.getMarresi());
         tvStatusi.setText(orders.getStatusi());
+
+
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
+        listViewItem.startAnimation(animation);
 
         return listViewItem;
     }

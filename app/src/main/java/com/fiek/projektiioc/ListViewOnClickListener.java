@@ -21,7 +21,11 @@ public class ListViewOnClickListener extends AppCompatActivity {
         TextView derguesi = findViewById(R.id.derguesi2);
         TextView marresi = findViewById(R.id.marresi2);
 
-        sasia.setText(orders.getSasia());
+        try {
+            sasia.setText(orders.getSasia());
+        } catch (NullPointerException ignored){
+
+        }
         porosia.setText(orders.getPorosia());
         derguesi.setText(orders.getDerguesi());
         marresi.setText(orders.getMarresi());
