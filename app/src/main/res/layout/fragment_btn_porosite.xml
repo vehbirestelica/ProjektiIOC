@@ -7,143 +7,11 @@
     android:background="@drawable/mainfragmentbackground"
     tools:context=".BtnPorositeFragment">
 
-
-    <Button
-        android:id="@+id/btn_orderCompleted"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:text="POROSITE E KOMPLETURA"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_orderCancel2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_orderOnProces"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:text="POROSITE NE PROCES"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_orderCompleted"
-        app:layout_constraintTop_toBottomOf="@+id/myOrders"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/myOrders"
-        android:text="Porosite e Mia"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_newOrder" />
-
-    <Button
-        android:id="@+id/btnPorosite"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="74dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:text="Produktet"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_orderCancel2"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:text="POROSITE E ANULUARA"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btnPorosite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_newOrder"
-        android:layout_width="266dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button"
-        android:paddingLeft="10sp"
-        android:paddingRight="10sp"
-        android:text="POROSI E RE"
-        android:textColor="@color/colorwhite"
-        android:textColorHighlight="@color/colorwhite"
-        android:textColorHint="@color/colorwhite"
-        android:textColorLink="@color/colorwhite"
-        android:textCursorDrawable="@color/colorwhite"
-        app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/porositetitle"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="117dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="76dp"
-        android:src="@drawable/appicon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/porositetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="Porositë"
         android:textAlignment="center"
@@ -153,5 +21,152 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="265dp"
+        android:layout_height="443dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/porositetitle">
+
+        <Button
+            android:id="@+id/btn_orderCompleted"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="POROSITE E KOMPLETURA"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/btn_orderCancel2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_orderOnProces"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="POROSITE NE PROCES"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/btn_orderCompleted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myOrders" />
+
+
+        <Button
+            android:id="@+id/myOrders"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="Porosite e Mia"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_newOrder" />
+
+
+        <Button
+            android:id="@+id/btn_orderCancel2"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="POROSITE E ANULUARA"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/btnPorosite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_newOrder"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="POROSI E RE"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/btn_orderOnProces"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/porositetitle"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/btnPorosite"
+            android:layout_width="266dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:text="Produktet"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorwhite"
+            android:textColorHint="@color/colorwhite"
+            android:textColorLink="@color/colorwhite"
+            android:textCursorDrawable="@color/colorwhite"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="117dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/appicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

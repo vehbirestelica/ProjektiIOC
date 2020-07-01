@@ -1,34 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainfragmentbackground"
-    tools:context=".Raportet">
+    tools:context=".Raportet"
+    android:orientation="vertical"
+    android:layout_marginTop="60dp">
 
-    <TextView
-        android:id="@+id/textView7"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="432dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="Kërko më shumë"
-        android:textColor="@color/colorwhite"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:id="@+id/logo"
+        android:src="@drawable/appicon"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderstotalCard"
+        android:layout_width="267dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/cardview_light_background"
+        app:cardCornerRadius="21dp"
+        app:cardElevation="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/orderstotal"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Totali i Porosive"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/totalOrderstxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="532"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/ordersonprocessCard"
-        android:layout_width="165dp"
+        android:layout_width="267dp"
         android:layout_height="154dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"
         app:cardElevation="10dp"
@@ -36,7 +86,8 @@
         app:layout_constraintEnd_toStartOf="@+id/ordersNotPaidCard"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orderstotalCard">
+        app:layout_constraintTop_toBottomOf="@+id/orderstotalCard"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,18 +126,19 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/ordersNotPaidCard"
-        android:layout_width="165dp"
+        android:layout_width="267dp"
         android:layout_height="154dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ordersPaidCard"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,27 +175,32 @@
 
     </androidx.cardview.widget.CardView>
 
+
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/orderstotalCard"
-        android:layout_width="165dp"
+        android:id="@+id/ordersPaidCard"
+        android:layout_width="267dp"
         android:layout_height="154dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="14dp"
         android:background="@color/cardview_light_background"
         app:cardCornerRadius="21dp"
         app:cardElevation="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:src="@drawable/orderstotal"></ImageView>
+                android:src="@drawable/paido"></ImageView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -151,17 +208,17 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="6dp"
                 android:fontFamily="@font/ubuntu_medium"
-                android:text="Totali i Porosive"
+                android:text="Porosite e Paguara"
                 android:textAlignment="center"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/totalOrderstxt"
+                android:id="@+id/paidOrderstxt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="532"
+                android:text="232"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
@@ -170,83 +227,11 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/ordersPaidCard"
-        android:layout_width="165dp"
-        android:layout_height="154dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/cardview_light_background"
-        app:cardCornerRadius="21dp"
-        app:cardElevation="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
-        app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="90dp"
-                        android:src="@drawable/paido"></ImageView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginTop="6dp"
-                        android:fontFamily="@font/ubuntu_medium"
-                        android:text="Porosite e Paguara"
-                        android:textAlignment="center"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/paidOrderstxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:fontFamily="@font/ubuntu_bold"
-                        android:text="232"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp" />
-                </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:text="Raporte mbi Porosite"
-        android:textColor="@color/colorDarkGray"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/searchbtn"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="9dp"
-        android:background="@drawable/buttonwhite"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.066" />
+</LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

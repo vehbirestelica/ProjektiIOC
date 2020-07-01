@@ -39,9 +39,15 @@
                 android:title="Llogaria" />
 
             <item
+                android:id="@+id/m_ndihma"
+                android:icon="@drawable/ic_phone"
+                android:title="Ndihma" />
+
+            <item
                 android:id="@+id/m_exit"
                 android:icon="@drawable/ic_exit"
                 android:title="Dil" />
+
         </menu>
      </item>
 </menu>

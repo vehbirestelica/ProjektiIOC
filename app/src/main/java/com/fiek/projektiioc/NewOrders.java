@@ -131,15 +131,15 @@ public class NewOrders implements Parcelable{
     }
 
 
-    public String getDerguesi () {
+    public String getDerguesi() {
         return derguesi;
     }
 
-    public void setDerguesi (String  derguesi) {
+    public void setDerguesi(String  derguesi) {
         this.derguesi = derguesi;
     }
 
-    public String getMarresi () {
+    public String getMarresi() {
         return marresi;
     }
 

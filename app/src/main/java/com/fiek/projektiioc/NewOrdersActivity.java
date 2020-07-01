@@ -1,5 +1,6 @@
 package com.fiek.projektiioc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,12 +10,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class NewOrdersActivity extends AppCompatActivity {
     Spinner spinner, spinnerDerguesi;
@@ -24,13 +35,15 @@ public class NewOrdersActivity extends AppCompatActivity {
     DatabaseReference dbref;
     RadioButton paguar, paPaguar, neProces;
     TextView userID;
+    Button BtnGoogleMapPick;
+
+
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
-
-        userID = (TextView) findViewById(R.id.userID);
+       userID = findViewById(R.id.userID);
         porosia = (EditText) findViewById(R.id.porosiaID);
         lokacioni = (EditText) findViewById(R.id.lokacioni);
         dataLeshimit = (EditText) findViewById(R.id.txtInvSum);
@@ -40,12 +53,31 @@ public class NewOrdersActivity extends AppCompatActivity {
         paguar = findViewById(R.id.radio3);
         paPaguar = findViewById(R.id.radio2);
         neProces = findViewById(R.id.radio1);
+        BtnGoogleMapPick = findViewById(R.id.Btngooglemap);
         btnregjistro = (Button) findViewById(R.id.btnInvSend);
         dbref = FirebaseDatabase.getInstance().getReference().child("addOrder");
+
 
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         newOrders = new NewOrders();
+
+
+////////////////////////////////loaction picker////////////////////////////////
+        Places.initialize(getApplicationContext(),"AIzaSyBucPJkgWbAepULcsDFNjqSRCoXd3UVeQ4");
+        BtnGoogleMapPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS);
+
+
+                //gjenero intentin
+                Intent intent  = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY , fieldList).build(NewOrdersActivity.this);
+                startActivityForResult(intent,100);
+            }
+        });
+//////////////////////////////////////////////////////////////////////////////////
+
 
         btnregjistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,5 +104,25 @@ public class NewOrdersActivity extends AppCompatActivity {
                 Toast.makeText(NewOrdersActivity.this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
+
+
+    ////////////////////////////////location picker on activity results////////////////////////
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==100 && resultCode ==RESULT_OK){
+            Place place = Autocomplete.getPlaceFromIntent(data);
+            lokacioni.setText(String.format(place.getName()));
+
+        }
+        else if(resultCode == AutocompleteActivity.RESULT_ERROR){
+            Status status = Autocomplete.getStatusFromIntent(data);
+            Toast.makeText(getApplicationContext(), status.getStatusMessage(),Toast.LENGTH_SHORT).show();
+        }
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 }
