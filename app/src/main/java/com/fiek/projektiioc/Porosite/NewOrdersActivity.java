@@ -74,12 +74,11 @@ public class NewOrdersActivity extends AppCompatActivity {
         btnregjistro = (Button) findViewById(R.id.btnInvSend);
         dbref = FirebaseDatabase.getInstance().getReference().child("addOrder");
 
-
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         newOrders = new NewOrders();
 
-        //////////////////test
+        //////////////////Get workers name form db
         FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
         CollectionReference subjectsRef = rootRef.collection("users");
         final List<String> subjects = new ArrayList<>();
