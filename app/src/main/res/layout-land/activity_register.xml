@@ -30,6 +30,8 @@
         android:id="@+id/txtkompaniaid"
         android:layout_width="310dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Kompania"
@@ -38,10 +40,12 @@
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@color/colorgray"
         android:textColorLink="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="245dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtemri"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtemail"
@@ -58,8 +62,10 @@
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/txtkompaniaid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.902"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
     <TextView
         android:id="@+id/logoiocpart"
@@ -79,8 +85,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="24dp"
         android:text="Keni llogari ?"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
@@ -93,6 +99,7 @@
         android:id="@+id/txtemri"
         android:layout_width="310dp"
         android:layout_height="50dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Emri"
@@ -104,12 +111,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="183dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtpassword"
         android:layout_width="310dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -118,12 +126,15 @@
         app:layout_constraintBottom_toTopOf="@+id/btnRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtemail"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnRegjistrohu"
         android:layout_width="179dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button"
         android:text="Regjistrohu"
         android:textAllCaps="false"
@@ -133,16 +144,17 @@
         android:textColorLink="@color/colorPrimaryDarker"
         android:textCursorDrawable="@color/colorPrimary"
         android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="317dp" />
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtKyqu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:clickable="true"
         android:linksClickable="true"
         android:text="Kyqu"
@@ -156,7 +168,7 @@
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView2" />
 
     <ProgressBar
