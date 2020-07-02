@@ -1,13 +1,8 @@
 package com.fiek.projektiioc.Porosite;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.firestore.ServerTimestamp;
 
-@IgnoreExtraProperties
-public class NewOrders implements Parcelable{
+public class NewOrders{
     private String porosia;
     private String lokacioni;
     private @ServerTimestamp
@@ -21,7 +16,16 @@ public class NewOrders implements Parcelable{
     private String paguarRB;
     private String paPaguarRB;
     private String neProcesRB;
+    private String porosiaID;
     private String userID;
+
+    public String getPorosiaID () {
+        return porosiaID;
+    }
+
+    public void setPorosiaID (String porosiaID) {
+        this.porosiaID = porosiaID;
+    }
 
     public String getUserID () {
         return userID;
@@ -59,7 +63,7 @@ public class NewOrders implements Parcelable{
     }
 
     public NewOrders (String porosia, String lokacioni, String dataLeshimit, String derguesi, String marresi, String sasia,
-                      String spinner, String radioGroup, String statusi, String paguarRB, String paPaguarRB, String neProcesRB, String userID) {
+                      String spinner, String radioGroup, String statusi, String paguarRB, String paPaguarRB, String neProcesRB, String userID, String porosiaID) {
         this.porosia = porosia;
         this.lokacioni = lokacioni;
         this.dataLeshimit = dataLeshimit;
@@ -73,30 +77,8 @@ public class NewOrders implements Parcelable{
         this.paPaguarRB = paPaguarRB;
         this.neProcesRB = neProcesRB;
         this.userID = userID;
+        this.porosiaID = porosiaID;
     }
-
-    protected NewOrders(Parcel no) {
-        porosia = no.readString();
-        lokacioni = no.readString();
-        dataLeshimit = no.readString();
-        derguesi = no.readString();
-        marresi = no.readString();
-        sasia = no.readString();
-        statusi = no.readString();
-    }
-
-    public static final Parcelable.Creator<NewOrders> CREATOR = new Parcelable.Creator<NewOrders>() {
-        @Override
-        public NewOrders createFromParcel(Parcel on) {
-            return new NewOrders(on);
-        }
-
-        @Override
-        public NewOrders[] newArray(int size) {
-            return new NewOrders[size];
-        }
-    };
-
 
     public String getStatusi () {
         return statusi;
@@ -188,21 +170,5 @@ public class NewOrders implements Parcelable{
                 ", neProcesRB='" + neProcesRB + '\'' +
                 ", userID='" + userID + '\'' +
                 '}';
-    }
-
-    @Override
-    public int describeContents () {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel (Parcel dest, int flags) {
-        dest.writeString(porosia);
-        dest.writeString(lokacioni);
-        dest.writeString(dataLeshimit);
-        dest.writeString(derguesi);
-        dest.writeString(marresi);
-        dest.writeString(sasia);
-        dest.writeString(statusi);
     }
 }

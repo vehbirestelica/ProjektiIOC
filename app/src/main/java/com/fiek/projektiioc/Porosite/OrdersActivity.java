@@ -1,21 +1,16 @@
 package com.fiek.projektiioc.Porosite;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fiek.projektiioc.ListViewOnClickListener;
 import com.fiek.projektiioc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,21 +55,6 @@ public class OrdersActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance().getCurrentUser();
         String currentUser = auth.getUid();
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent onClickintent = new Intent(OrdersActivity.this,ListViewOnClickListener.class);
-//                onClickintent.putExtra("orders",mListView.getItemAtPosition(position).toString());
-//                startActivity(onClickintent);
-//                st=et.getText().toString();
-                onClickintent.putExtra("EXTRA_SESSION_ID",st);
-                startActivity(onClickintent);
-
-                Toast.makeText(OrdersActivity.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
