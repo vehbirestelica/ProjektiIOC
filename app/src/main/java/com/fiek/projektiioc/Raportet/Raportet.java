@@ -29,7 +29,7 @@ public class Raportet extends Fragment {
     TextView TotalPaid;
     TextView TotalNotPaid;
 
-    private DatabaseReference mDatabase;
+    //private DatabaseReference Database;
     private int countdata;
 
     @Override
@@ -39,12 +39,12 @@ public class Raportet extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_raportet, container, false);
 
-        TotalNotPaid = (TextView)view.findViewById(R.id.notpaidOrderstxt);
-        TotalPaid = (TextView) view.findViewById(R.id.paidOrderstxt);
-        TotalOrders =(TextView)view.findViewById(R.id.totalOrderstxt);
-        TotalProccesing =(TextView) view.findViewById(R.id.processingOrderstxt);
+        TotalNotPaid = view.findViewById(R.id.notpaidOrderstxt);
+        TotalPaid = view.findViewById(R.id.paidOrderstxt);
+        TotalOrders = view.findViewById(R.id.totalOrderstxt);
+        TotalProccesing = view.findViewById(R.id.processingOrderstxt);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        //Database = FirebaseDatabase.getInstance().getReference();
 
         Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Pa Paguar");
 
