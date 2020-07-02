@@ -65,14 +65,14 @@
         android:id="@+id/logoiocpart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="52dp"
         android:text="INVOICES ON CLICK"
         android:textColor="@color/colorDarkGray"
         android:textSize="17sp"
         app:fontFamily="@font/ubuntu_medium"
         app:layout_constraintBottom_toTopOf="@+id/txtemri"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
