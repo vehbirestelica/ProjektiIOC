@@ -12,7 +12,7 @@
                 android:id="@+id/m_fakturat"
                 android:checkable="true"
                 android:icon="@drawable/ic_fakturat"
-                android:title="Fakturat" />
+                android:title="Faturat" />
 
             <item
                 android:id="@+id/m_porosit"

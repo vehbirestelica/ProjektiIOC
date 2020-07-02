@@ -107,7 +107,7 @@ public class NewInvoiceActivity extends AppCompatActivity {
                         }
                         else if(type.getSelectedItemPosition() == 0 )
                         {
-                            Toast.makeText(NewInvoiceActivity.this,"Zgjidhni llojin e faktures",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(NewInvoiceActivity.this,"Zgjidhni llojin e fatures",Toast.LENGTH_SHORT).show();
                         }
                         else {
                             uploadImageToFirebase(f.getName(), contentUri);
@@ -240,10 +240,10 @@ public class NewInvoiceActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(NewInvoiceActivity.this,"Invoice sent",Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewInvoiceActivity.this,"Fatura u dergua!",Toast.LENGTH_LONG).show();
                 }
                 else {
-                    Toast.makeText(NewInvoiceActivity.this,"Failed to sent Invoice",Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewInvoiceActivity.this,"Deshtoi dergmi i fatures!",Toast.LENGTH_LONG).show();
                 }
             }
         });
