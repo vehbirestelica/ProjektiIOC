@@ -1,16 +1,11 @@
 package com.fiek.projektiioc.Porosite;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fiek.projektiioc.ListViewOnClickListener;
 import com.fiek.projektiioc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,17 +39,6 @@ public class ProcessingOrders extends AppCompatActivity {
         FirebaseUser auth;
         auth = FirebaseAuth.getInstance().getCurrentUser();
         String currentUser = auth.getUid();
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent onClickintent = new Intent(ProcessingOrders.this, ListViewOnClickListener.class);
-                startActivity(onClickintent);
-                Toast.makeText(ProcessingOrders.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
     @Override
