@@ -126,7 +126,6 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/input_field"
                 android:ems="10"
-                android:entries="@array/spDerguesi"
                 android:hint="Derguesi"
                 android:spinnerMode="dropdown"
                 android:textColor="@color/colorDarkGray"

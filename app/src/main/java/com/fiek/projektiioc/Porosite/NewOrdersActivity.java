@@ -3,6 +3,7 @@ package com.fiek.projektiioc.Porosite;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -17,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fiek.projektiioc.R;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
@@ -31,7 +34,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -69,6 +77,45 @@ public class NewOrdersActivity extends AppCompatActivity {
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         newOrders = new NewOrders();
+
+        //////////////////test
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        CollectionReference subjectsRef = rootRef.collection("users");
+        final List<String> subjects = new ArrayList<>();
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDerguesi.setAdapter(adapter);
+
+        subjectsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        int companyId = Integer.parseInt(document.getString("companiID"));
+                        if( companyId >=20000){
+                            String subject = document.getString("name");
+                            subjects.add(subject);
+                        }
+
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
+//        subjectsRefRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                        String subject = document.getString("name");
+//                        subjects.add(subject);
+//                    }
+//                    adapter.notifyDataSetChanged();
+//                }
+//            }
+//        });
+
+        //////
 
 
 ////////////////////////////////loaction picker////////////////////////////////
