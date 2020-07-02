@@ -33,7 +33,9 @@
         <activity android:name=".Faturat.Invoice_details" />
         <activity android:name=".Faturat.MyInvoiceActivity" />
         <activity android:name=".Faturat.NewInvoiceActivity" />
-        <activity android:name=".Porosite.NewOrdersActivity" />
+        <activity android:name=".Porosite.NewOrdersActivity">
+            android:screenOrientation="sensorLandscape"
+        </activity>
         <activity android:name=".Porosite.NotPaidOrders" />
         <activity android:name=".Porosite.ProcessingOrders" />
         <activity

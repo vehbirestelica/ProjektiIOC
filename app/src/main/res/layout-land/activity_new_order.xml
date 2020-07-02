@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/porosiabackground"
+    tools:context=".Faturat.NewInvoiceActivity"
+    android:id="@+id/newOrderLayout">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/tvInvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="87dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="87dp"
+            android:layout_marginBottom="10dp"
+            android:text="Porosi e re"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorwhite"
+            android:textSize="30sp"
+            app:fontFamily="@font/ubuntu_medium" />
+
+        <TextView
+            android:id="@+id/userID"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/tvInvTitle"
+            android:layout_alignParentRight="true"
+            android:hint="ID e userit"
+            android:textColor="@color/colorwhite"
+            android:visibility="invisible" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/porosiaID"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="-150dp"
+                android:layout_below="@id/tvInvTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:hint="Porosia"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_gravity="center"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="-150dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/lokacioni"
+                    android:layout_width="242dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/porosiaID"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/input_field"
+                    android:ems="10"
+                    android:hint="Lokacioni"
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHighlight="@color/colorPrimary"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <Button
+                    android:id="@+id/Btngooglemap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/button"
+                    android:text="MAP"
+                    android:textColor="@color/colorwhite"></Button>
+
+            </LinearLayout>
+            <EditText
+                android:id="@+id/txtInvSum"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/lokacioni"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:layout_marginLeft="-150dp"
+                android:hint="Data e leshimit"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_gravity="center"/>
+
+
+
+            <Spinner
+                android:id="@+id/derguesi"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtInvSum"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:layout_marginLeft="-150dp"
+                android:hint="Derguesi"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/marresi"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/derguesi"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/input_field"
+                android:ems="10"
+                android:layout_marginLeft="-150dp"
+                android:hint="Marresi"
+                android:textColor="@color/colorDarkGray"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorgray"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="141dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="-240dp">
+
+            <LinearLayout
+                android:layout_width="167dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="490dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/marresi"
+                    android:layout_alignRight="@id/caktoSasineSpinner"
+                    android:layout_marginTop="3dp"
+                    android:text="Cakto Sasine:"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/caktoSasineSpinner"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/marresi"
+                    android:layout_alignLeft="@+id/txtInvSum"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:entries="@array/spinnerSasia"
+                    android:paddingRight="30dp"
+                    android:spinnerMode="dialog"
+
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="194dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/txtInvSum"
+                    android:text="Statusi:"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="161dp"
+                    android:layout_height="133dp"
+                    android:layout_below="@+id/txtInvSum"
+                    android:layout_marginBottom="20dp">
+
+                    <RadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/radio2"
+                        android:layout_marginLeft="30dp"
+                        android:checked="true"
+                        android:text="Paguar" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/radio1"
+                        android:layout_marginLeft="30dp"
+                        android:text="Ne Proces" />
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/btnInvTakePic"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Pa Paguar" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnInvSend"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="-45dp"
+            android:background="@drawable/button"
+            android:text="Regjistro"
+            android:textAllCaps="false"
+            android:textColor="@color/colorwhite"
+            android:textColorHighlight="@color/colorPrimaryDarker"
+            android:textColorHint="@color/colorPrimaryDarker"
+            android:textColorLink="@color/colorPrimaryDarker"
+            android:textCursorDrawable="@color/colorPrimary"
+            android:textSize="17sp" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
