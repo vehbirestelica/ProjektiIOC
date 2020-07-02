@@ -290,10 +290,5 @@ public class NewInvoiceActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        Intent intent = new Intent(NewInvoiceActivity.this, Mainmenu.class);
-        startActivity(intent);
-    }
+
 }
