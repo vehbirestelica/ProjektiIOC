@@ -37,7 +37,7 @@ public class MyInvoiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_invoice);
 
         mMyInvoices_list = findViewById(R.id.myInvoices_list);
-
+        mMyInvoices_list.setNestedScrollingEnabled(true);
         db = FirebaseFirestore.getInstance();
 
         CollectionReference invoicesCollectionRef = db.collection("Invoices");

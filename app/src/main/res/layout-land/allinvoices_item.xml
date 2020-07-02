@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="450dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
@@ -16,6 +16,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="28dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorDarkGray"
         android:textSize="15sp"
@@ -35,10 +36,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toEndOf="@+id/allinv_item_title"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/allinv_item_usersname"
@@ -55,7 +56,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="4dp"
         android:text="Derguesi:"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +66,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="96dp"
         android:layout_marginTop="8dp"
         android:text="Titulli"
         app:layout_constraintStart_toStartOf="parent"
