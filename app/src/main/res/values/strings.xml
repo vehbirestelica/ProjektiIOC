@@ -8,7 +8,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="spReason_items">
-        <item>Lloji i Faktures</item>
+        <item>Lloji i Fatures</item>
         <item>Karburant</item>
         <item>Ushqim</item>
         <item>Te tjera</item>
