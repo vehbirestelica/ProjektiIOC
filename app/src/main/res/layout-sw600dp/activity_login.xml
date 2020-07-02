@@ -93,7 +93,7 @@
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/txtLPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -131,7 +131,7 @@
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLEmail"
         app:layout_constraintVertical_bias="0.253" />
@@ -140,14 +140,14 @@
         android:id="@+id/btnLkyqu"
         android:layout_width="150dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/button"
         android:text="Kyqu"
         android:textAllCaps="false"
         android:textColor="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/txtRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar

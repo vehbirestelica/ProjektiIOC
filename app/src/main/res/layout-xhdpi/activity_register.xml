@@ -18,7 +18,7 @@
         android:textColorHighlight="@color/colorPrimaryDarker"
         android:textColorHint="@color/colorPrimaryLight"
         android:textColorLink="@color/colorPrimary"
-        android:textSize="40sp"
+        android:textSize="60sp"
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toTopOf="@+id/logoiocpart"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
 
     <EditText
         android:id="@+id/txtkompaniaid"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -46,8 +46,8 @@
 
     <EditText
         android:id="@+id/txtemail"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -66,21 +66,22 @@
         android:id="@+id/logoiocpart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="80dp"
         android:text="INVOICES ON CLICK"
         android:textColor="@color/colorDarkGray"
-        android:textSize="12sp"
+        android:textSize="17sp"
         app:fontFamily="@font/ubuntu_medium"
         app:layout_constraintBottom_toTopOf="@+id/txtemri"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
         android:layout_marginBottom="32dp"
         android:text="Keni llogari ?"
         android:textColor="@color/colorDarkGray"
@@ -92,8 +93,8 @@
 
     <EditText
         android:id="@+id/txtemri"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -110,22 +111,22 @@
 
     <EditText
         android:id="@+id/txtpassword"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRegjistrohu"
-        android:layout_width="186dp"
-        android:layout_height="40dp"
+        android:layout_width="179dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button"
         android:text="Regjistrohu"
@@ -166,13 +167,13 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="43dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

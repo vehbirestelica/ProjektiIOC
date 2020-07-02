@@ -113,8 +113,8 @@
 
                             <Button
                                 android:id="@+id/menageordersbtn"
-                                android:layout_width="115dp"
-                                android:layout_height="22dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_below="@+id/totalporositetxt"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentEnd="true"
