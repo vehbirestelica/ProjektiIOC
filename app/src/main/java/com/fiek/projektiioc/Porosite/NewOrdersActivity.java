@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fiek.projektiioc.Faturat.NewInvoiceActivity;
 import com.fiek.projektiioc.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -84,6 +85,7 @@ public class NewOrdersActivity extends AppCompatActivity {
         final List<String> subjects = new ArrayList<>();
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subjects.add("Derguesi");
         spinnerDerguesi.setAdapter(adapter);
 
         subjectsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -92,6 +94,7 @@ public class NewOrdersActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         int companyId = Integer.parseInt(document.getString("companiID"));
+
                         if( companyId >=20000){
                             String subject = document.getString("name");
                             subjects.add(subject);
@@ -138,7 +141,10 @@ public class NewOrdersActivity extends AppCompatActivity {
         btnregjistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-
+                if(spinnerDerguesi.getSelectedItemPosition() == 0 )
+                {
+                    Toast.makeText(NewOrdersActivity.this,"Zgjidhni Derguesin",Toast.LENGTH_SHORT).show();
+                }
                 if(paguar.isChecked()){
                     newOrders.setStatusi(paguar.getText().toString());
                 } else if (paPaguar.isChecked()){
