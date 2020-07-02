@@ -11,7 +11,7 @@
         android:id="@+id/logoioc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="108dp"
         android:text="I.O.C"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorDarkGray"
@@ -21,7 +21,7 @@
         android:textSize="60sp"
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,7 +70,7 @@
         android:textSize="17sp"
         app:fontFamily="@font/ubuntu_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoioc2" />
 
@@ -78,8 +78,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="360dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginBottom="92dp"
         android:text="Keni llogari ?"
         android:textColor="@color/colorDarkGray"
         android:textColorHighlight="@color/colorPrimary"
@@ -103,7 +103,7 @@
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/txtemail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -169,9 +169,9 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtpassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.013" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
