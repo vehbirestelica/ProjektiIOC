@@ -11,13 +11,12 @@
         android:id="@+id/btnfaktura"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/button"
         android:text="Shto Fakturen e re"
         android:textAlignment="center"
         android:textColor="@color/colorwhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -25,14 +24,15 @@
         android:id="@+id/myInvbtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/button"
         android:padding="7dp"
         android:text="Fakturat e Derguara"
         android:textColor="@color/colorwhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toEndOf="@+id/btnfaktura"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
@@ -65,12 +65,13 @@
         android:id="@+id/allinvoicesbtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
         android:background="@drawable/button"
         android:text="Fakturat"
         android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myInvbtn" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
 </androidx.constraintlayout.widget.ConstraintLayout>
