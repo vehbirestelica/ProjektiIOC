@@ -11,19 +11,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
  
-$heroes = array(); 
+$products = array();
  
 $sql = "SELECT *  FROM products;";
 
 $stmt = $conn->prepare($sql);
- 
-//executing that statment
+
 $stmt->execute();
  
-//binding results for that statment 
+
 $stmt->bind_result($productid, $productname, $productcost, $relasedate , $productcomment);
- 
-//looping through all the records
+
 while($stmt->fetch()){
 	
 	//pushing fetched data in an array 
@@ -35,12 +33,12 @@ while($stmt->fetch()){
         'productcomment'=>$productcomment,
 	];
 	
-	//pushing the array inside the hero array 
-	array_push($heroes, $temp);
+	//pushing the array inside the products array
+	array_push($products, $temp);
 }
  
 //displaying the data in json format 
-echo json_encode($heroes);
+echo json_encode($products);
 
 
 

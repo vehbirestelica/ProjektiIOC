@@ -12,31 +12,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="40dp"
         android:text="INVOICES ON CLICK"
         android:textColor="@color/colorDarkGray"
         android:textSize="17sp"
         app:fontFamily="@font/ubuntu_medium"
         app:layout_constraintBottom_toTopOf="@+id/txtLEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoioc"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintTop_toBottomOf="@+id/logoioc" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="16dp"
         android:text="Nuk keni llogari ?"
         android:textColor="@color/colorDarkGray"
         android:textSize="16sp"
+
         app:fontFamily="@font/ubuntu_medium"
-        app:layout_constraintBottom_toTopOf="@+id/forgetpasswordtxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
     <TextView
         android:id="@+id/logoioc2"
@@ -52,16 +53,19 @@
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toTopOf="@+id/logoiocpart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.924" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
         android:id="@+id/txtRegjistrohu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:text="Regjistrohu"
         android:textAllCaps="false"
@@ -74,15 +78,16 @@
         app:fontFamily="@font/ubuntu_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
     <EditText
         android:id="@+id/txtLEmail"
         android:layout_width="310dp"
         android:layout_height="50dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Email"
@@ -93,10 +98,8 @@
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/txtLPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/checkRemeberMe"
@@ -111,16 +114,16 @@
         android:textCursorDrawable="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/btnLkyqu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLPassword"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtLPassword"
         android:layout_width="310dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="580dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Password"
@@ -129,23 +132,23 @@
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@color/colorgray"
         android:textColorLink="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnLkyqu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnLkyqu"
         android:layout_width="150dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="272dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/button"
         android:text="Kyqu"
         android:textAllCaps="false"
         android:textColor="@color/colorwhite"
         app:layout_constraintBottom_toTopOf="@+id/txtRegjistrohu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
@@ -156,16 +159,16 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toEndOf="@+id/btnLkyqu"
-        app:layout_constraintTop_toBottomOf="@+id/txtLPassword"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
 
     <TextView
         android:id="@+id/forgetpasswordtxt"
         android:layout_width="260dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/ubuntu"
         android:text="Keni harruar Fjalekalimin ?"
         android:textAlignment="center"
@@ -173,7 +176,7 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
