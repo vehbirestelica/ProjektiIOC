@@ -1,10 +1,12 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Porosite;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.fiek.projektiioc.R;
 
 public class ListViewOnClickListener extends AppCompatActivity {
 

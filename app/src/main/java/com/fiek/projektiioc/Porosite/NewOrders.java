@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Porosite;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,15 +1,20 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Porosite;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fiek.projektiioc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,24 +27,33 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessingOrders extends AppCompatActivity {
+public class OrdersActivity extends AppCompatActivity {
+    private static final String TAG = "activity order";
+
     private FirebaseDatabase mDatabase;
     private DatabaseReference myRef;
-    List<NewOrders> ordersList;
+    Spinner spinner;
     private ArrayList<String> arrayList = new ArrayList<String>();
-
+    private ArrayList<String> arrayList1 = new ArrayList<String>();
+    FirebaseUser auth;
+    TextView userID,marresi;
+    ImageView img;
+    List<NewOrders> ordersList;
+    private DatabaseReference mRef;
+    ListViewOnClickListener onClick = new ListViewOnClickListener();
     private ListView mListView;
 
     @Override
-    protected void onCreate (Bundle savedInstanceState) {
+    protected void onCreate (@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
 
+        userID = findViewById(R.id.userID);
 
         ordersList = new ArrayList<>();
-        mListView = (ListView) findViewById(R.id.listView);
 
-        FirebaseUser auth;
+        mListView = findViewById(R.id.listView);
+
         auth = FirebaseAuth.getInstance().getCurrentUser();
         String currentUser = auth.getUid();
 
@@ -47,18 +61,18 @@ public class ProcessingOrders extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent onClickintent = new Intent(ProcessingOrders.this,ListViewOnClickListener.class);
+                Intent onClickintent = new Intent(OrdersActivity.this,ListViewOnClickListener.class);
+                onClickintent.putExtra("orders",mListView.getItemAtPosition(position).toString());
                 startActivity(onClickintent);
-                Toast.makeText(ProcessingOrders.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
+                Toast.makeText(OrdersActivity.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
     protected void onStart () {
         super.onStart();
-        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Ne Proces").limitToLast(50);
+        Query query = FirebaseDatabase.getInstance().getReference("addOrder").orderByChild("statusi").equalTo("Paguar").limitToLast(50);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange (@NonNull DataSnapshot snapshot) {
@@ -69,7 +83,7 @@ public class ProcessingOrders extends AppCompatActivity {
                     ordersList.add(orders);
                 }
 
-                ProcessingListAdapter adapter = new ProcessingListAdapter(ProcessingOrders.this, ordersList);
+                ListAdapter adapter = new ListAdapter(OrdersActivity.this, ordersList);
                 mListView.setAdapter(adapter);
             }
 

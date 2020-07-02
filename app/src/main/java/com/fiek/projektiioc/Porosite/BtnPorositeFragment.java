@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Porosite;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.fiek.projektiioc.R;
 
 
 public class BtnPorositeFragment extends Fragment {
@@ -48,7 +50,7 @@ public class BtnPorositeFragment extends Fragment {
         }
         btnOrderCompleted.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),OrdersActivity.class);
+                Intent intent = new Intent(getActivity(), OrdersActivity.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +64,7 @@ public class BtnPorositeFragment extends Fragment {
         btnOrderProcessing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-                Intent intent2 = new Intent(getActivity(),ProcessingOrders.class);
+                Intent intent2 = new Intent(getActivity(), ProcessingOrders.class);
                 startActivity(intent2);
             }
         });
@@ -76,7 +78,7 @@ public class BtnPorositeFragment extends Fragment {
         btnOrderNotPaid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-                Intent intent3 = new Intent(getActivity(),NotPaidOrders.class);
+                Intent intent3 = new Intent(getActivity(), NotPaidOrders.class);
                 startActivity(intent3);
             }
         });
@@ -84,7 +86,7 @@ public class BtnPorositeFragment extends Fragment {
         btnnewproducts = (Button) view.findViewById(R.id.btnPorosite);
         btnnewproducts.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),newProducts.class);
+                Intent intent = new Intent(getActivity(), newProducts.class);
                 startActivity(intent);
             }
         });
@@ -93,7 +95,7 @@ public class BtnPorositeFragment extends Fragment {
         btnMyOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-                Intent intent = new Intent(getActivity(),MyOrders.class);
+                Intent intent = new Intent(getActivity(), MyOrders.class);
                 startActivity(intent);
             }
         });

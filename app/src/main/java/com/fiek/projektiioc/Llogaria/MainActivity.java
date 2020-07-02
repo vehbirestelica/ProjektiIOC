@@ -1,14 +1,15 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Llogaria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.fiek.projektiioc.Kryefaqja.Mainmenu;
+import com.fiek.projektiioc.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         // Nese useri ekziston
         if(fAuth.getCurrentUser() != null){
-            Intent intent = new Intent(MainActivity.this,Mainmenu.class);
+            Intent intent = new Intent(MainActivity.this, Mainmenu.class);
             startActivity(intent);
         }
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         txtRegjistrohubtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });

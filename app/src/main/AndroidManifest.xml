@@ -20,30 +20,30 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".Locationpreview"></activity>
+        <activity android:name=".Kryefaqja.Locationpreview"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".ListViewOnClickListener" />
-        <activity android:name=".LlogariaA" />
-        <activity android:name=".All_InvoicesActivity" />
-        <activity android:name=".newProducts" />
-        <activity android:name=".Invoice_details" />
-        <activity android:name=".MyInvoiceActivity" />
-        <activity android:name=".NewInvoiceActivity" />
-        <activity android:name=".NewOrdersActivity" />
-        <activity android:name=".NotPaidOrders" />
-        <activity android:name=".ProcessingOrders" />
+        <activity android:name=".Porosite.ListViewOnClickListener" />
+        <activity android:name=".Llogaria.LlogariaA" />
+        <activity android:name=".Faturat.All_InvoicesActivity" />
+        <activity android:name=".Porosite.newProducts" />
+        <activity android:name=".Faturat.Invoice_details" />
+        <activity android:name=".Faturat.MyInvoiceActivity" />
+        <activity android:name=".Faturat.NewInvoiceActivity" />
+        <activity android:name=".Porosite.NewOrdersActivity" />
+        <activity android:name=".Porosite.NotPaidOrders" />
+        <activity android:name=".Porosite.ProcessingOrders" />
         <activity
-            android:name=".Mainmenu"
+            android:name=".Kryefaqja.Mainmenu"
             android:theme="@style/AppTheme" />
-        <activity android:name=".OrdersActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MyOrders" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Porosite.OrdersActivity" />
+        <activity android:name=".Llogaria.RegisterActivity" />
+        <activity android:name=".Llogaria.LoginActivity" />
+        <activity android:name=".Porosite.MyOrders" />
+        <activity android:name=".Llogaria.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

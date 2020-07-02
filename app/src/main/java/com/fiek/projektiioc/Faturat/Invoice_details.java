@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Faturat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.fiek.projektiioc.Faturat.Invoice;
+import com.fiek.projektiioc.R;
 import com.squareup.picasso.Picasso;
 
 public class Invoice_details extends AppCompatActivity {

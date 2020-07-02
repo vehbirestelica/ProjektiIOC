@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Faturat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.google.protobuf.StringValue;
+import com.fiek.projektiioc.R;
 
 public class FakturatFragment extends Fragment {
     Button btnNewInvoice;
@@ -37,14 +36,14 @@ public class FakturatFragment extends Fragment {
         btnNewInvoice = (Button) view.findViewById(R.id.btnfaktura);
         btnNewInvoice.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),NewInvoiceActivity.class);
+                Intent intent = new Intent(getActivity(), NewInvoiceActivity.class);
                 startActivity(intent);
             }
         });
         btnMyInvoices = (Button) view.findViewById(R.id.myInvbtn);
         btnMyInvoices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),MyInvoiceActivity.class);
+                Intent intent = new Intent(getActivity(), MyInvoiceActivity.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +57,7 @@ public class FakturatFragment extends Fragment {
         }
         btnAllInvoices.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),All_InvoicesActivity.class);
+                Intent intent = new Intent(getActivity(), All_InvoicesActivity.class);
                 startActivity(intent);
             }
         });
