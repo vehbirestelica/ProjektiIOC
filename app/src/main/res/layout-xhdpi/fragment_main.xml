@@ -79,7 +79,7 @@
                         android:text="Menaxho Porosite"
                         android:textAlignment="center"
                         android:textColor="@color/colorDarkGray"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="104dp"
+                            android:layout_width="180dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/proffit"></ImageView>
 
@@ -97,19 +97,19 @@
 
                             <TextView
                                 android:id="@+id/totalporositetxt"
-                                android:layout_width="182dp"
-                                android:layout_height="47dp"
+                                android:layout_width="187dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginStart="4dp"
                                 android:layout_marginTop="8dp"
-                                android:layout_marginEnd="6dp"
+                                android:layout_marginEnd="0dp"
                                 android:fontFamily="@font/ubuntu_medium"
                                 android:text="Menaxhimi i Porosive me ane te IOC eshte shume me i shpejt."
                                 android:textAlignment="viewStart"
                                 android:textColor="@android:color/tertiary_text_light"
-                                android:textSize="12sp" />
+                                android:textSize="14sp" />
 
                             <Button
                                 android:id="@+id/menageordersbtn"
@@ -164,7 +164,7 @@
                         android:text="Menaxho Faturat"
                         android:textAlignment="center"
                         android:textColor="@color/colorDarkGray"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="102dp"
+                            android:layout_width="174dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/shpenzime"></ImageView>
 
@@ -194,7 +194,7 @@
                                 android:text="Menaxhimi i Fakturave me IOC eshte shume i lehte dhe i thjeshte"
                                 android:textAlignment="viewStart"
                                 android:textColor="@android:color/tertiary_text_light"
-                                android:textSize="12sp" />
+                                android:textSize="14sp" />
 
                             <Button
                                 android:id="@+id/menageinvoicebtn"
@@ -233,7 +233,7 @@
             android:fontFamily="@font/ubuntu_medium"
             android:text="Kontrollo lokacionin tënd"
             android:textColor="@color/colorgray"
-            android:textSize="14dp" />
+            android:textSize="16dp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -282,7 +282,7 @@
             android:fontFamily="@font/ubuntu_medium"
             android:text="Porosite e Fundit"
             android:textColor="@color/colorgray"
-            android:textSize="14dp" />
+            android:textSize="16dp" />
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"

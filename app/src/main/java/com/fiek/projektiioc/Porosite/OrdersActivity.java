@@ -1,7 +1,6 @@
 package com.fiek.projektiioc.Porosite;
 
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -31,7 +30,6 @@ public class OrdersActivity extends AppCompatActivity {
     private DatabaseReference myRef;
     Spinner spinner;
     private ArrayList<String> arrayList = new ArrayList<String>();
-    private ArrayList<String> arrayList1 = new ArrayList<String>();
     FirebaseUser auth;
     TextView userID,marresi;
     ImageView img;
@@ -39,8 +37,6 @@ public class OrdersActivity extends AppCompatActivity {
     private DatabaseReference mRef;
     ListViewOnClickListener onClick = new ListViewOnClickListener();
     private ListView mListView;
-    String st;
-    EditText et;
 
     @Override
     protected void onCreate (@Nullable Bundle savedInstanceState) {
