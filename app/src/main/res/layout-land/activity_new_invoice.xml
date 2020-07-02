@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainfragmentbackground"
+    tools:context=".Faturat.NewInvoiceActivity">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp">
+
+                <EditText
+                    android:id="@+id/txtInvTitle"
+                    android:layout_width="310dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tvInvTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/input_field"
+                    android:ems="10"
+                    android:hint="Titulli"
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHighlight="@color/colorPrimary"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <Spinner
+                    android:id="@+id/spInvReason"
+
+                    android:layout_width="310dp"
+                    android:layout_height="30dp"
+
+                    android:layout_below="@id/txtInvTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/input_field"
+                    android:entries="@array/spReason_items"
+                    android:spinnerMode="dialog"
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHighlight="@color/colorPrimary"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/txtInvSum"
+                    android:layout_width="310dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/spInvReason"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/input_field"
+                    android:ems="10"
+                    android:hint="Shuma"
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHighlight="@color/colorPrimary"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/txtInvComment"
+                    android:layout_width="310dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/txtInvSum"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/input_field"
+                    android:ems="10"
+                    android:hint="Komenti"
+                    android:textColor="@color/colorDarkGray"
+                    android:textColorHighlight="@color/colorPrimary"
+                    android:textColorHint="@color/colorgray"
+                    android:textColorLink="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/invimgview"
+                    android:layout_width="149dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/txtInvComment"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_marginBottom="20dp"
+                    android:layout_toEndOf="@+id/btnInvTakePic"
+                    android:src="@drawable/ic_fakturat" />
+
+                <Button
+                    android:id="@+id/btnInvTakePic"
+                    android:layout_width="171dp"
+                    android:layout_height="66dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="235dp"
+                    android:background="@drawable/buttonwhite"
+                    android:text="Ngarko Faturen"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textColorHighlight="@color/colorPrimaryDarker"
+                    android:textColorHint="@color/colorPrimaryDarker"
+                    android:textColorLink="@color/colorPrimaryDarker"
+                    android:textCursorDrawable="@color/colorPrimary"
+                    android:textSize="17sp" />
+
+                <TextView
+
+                    android:id="@+id/tvInvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="153dp"
+                    android:layout_marginEnd="151dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Faktura"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="30sp"
+                    app:fontFamily="@font/ubuntu_medium" />
+
+                <Button
+                    android:id="@+id/btnInvSend"
+                    android:layout_width="171dp"
+                    android:layout_height="73dp"
+                    android:layout_below="@+id/txtInvComment"
+                    android:layout_alignParentEnd="true"
+
+                    android:layout_marginStart="41dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="151dp"
+
+                    android:layout_marginBottom="213dp"
+                    android:layout_toEndOf="@+id/invimgview"
+                    android:background="@drawable/button"
+                    android:text="Dergo"
+                    android:textColor="@color/colorwhite"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+</RelativeLayout>

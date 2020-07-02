@@ -2,8 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="450dp"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     tools:context=".Faturat.MyInvoiceActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -17,7 +18,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/myInvoices_list"
-                android:layout_width="match_parent"
+                android:layout_width="450dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
