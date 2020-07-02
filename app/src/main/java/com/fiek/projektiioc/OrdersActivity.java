@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -41,6 +42,8 @@ public class OrdersActivity extends AppCompatActivity {
     private DatabaseReference mRef;
     ListViewOnClickListener onClick = new ListViewOnClickListener();
     private ListView mListView;
+    String st;
+    EditText et;
 
     @Override
     protected void onCreate (@Nullable Bundle savedInstanceState) {
@@ -61,8 +64,12 @@ public class OrdersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent onClickintent = new Intent(OrdersActivity.this,ListViewOnClickListener.class);
-                onClickintent.putExtra("orders",mListView.getItemAtPosition(position).toString());
+//                onClickintent.putExtra("orders",mListView.getItemAtPosition(position).toString());
+//                startActivity(onClickintent);
+//                st=et.getText().toString();
+                onClickintent.putExtra("EXTRA_SESSION_ID",st);
                 startActivity(onClickintent);
+
                 Toast.makeText(OrdersActivity.this,"dwdwddwdwd",Toast.LENGTH_SHORT).show();
             }
         });
