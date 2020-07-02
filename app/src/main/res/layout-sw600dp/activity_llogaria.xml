@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomebackground"
+    tools:context=".Llogaria.LlogariaA"
+    android:gravity="center_horizontal">
+
+
+    <TextView
+        android:id="@+id/txtperdoruesill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Veton Shala"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toEndOf="@+id/llperdoruesitxt4"
+        app:layout_constraintTop_toBottomOf="@+id/profileimg" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileimg"
+        android:layout_width="145dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/ic_llogaria"
+        app:civ_border_color="#0361AC"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Llogaria"
+        android:textColor="@color/colorDarkGray"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="19sp"
+        app:fontFamily="@font/ubuntu_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnndryshoimg"
+        android:layout_width="162dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/button"
+        android:text="Ndrysho Foton"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toEndOf="@+id/profileimg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtemailll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="vetonnshala@gmail.com"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toEndOf="@+id/llperdoruesitxt3"
+        app:layout_constraintTop_toBottomOf="@+id/txtrolill" />
+
+    <TextView
+        android:id="@+id/txtrolill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Menagjer"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toEndOf="@+id/llroliitxt"
+        app:layout_constraintTop_toBottomOf="@+id/txtperdoruesill" />
+
+    <TextView
+        android:id="@+id/llroliitxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="32dp"
+        android:text="Pozita"
+        android:textColor="@color/colorgray"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llperdoruesitxt4" />
+
+    <TextView
+        android:id="@+id/llperdoruesitxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="28dp"
+        android:text="Emaili"
+        android:textColor="@color/colorgray"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llroliitxt" />
+
+    <TextView
+        android:id="@+id/llperdoruesitxt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="68dp"
+        android:text="Përdoruesi"
+        android:textColor="@color/colorgray"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileimg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomebackground"
+    tools:context=".Raportet.Raportet"
+    android:layout_marginTop="60dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/appicon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"/>
+
+
+
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/backcardprofiti"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="174dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/shpenzimetCard"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/totalprofitCard"-->
+    <!--        app:layout_constraintVertical_bias="0.263">-->
+
+    <!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+
+    <!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="77dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:textColor="Si llogaritet Profiti?" />&ndash;&gt;-->
+
+    <!--    </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="334dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/totalprofitCard"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorwhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:text="Menaxho Porosite"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="187dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/proffit"></ImageView>
+
+                    <RelativeLayout
+                        android:layout_width="191dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/totalporositetxt"
+                            android:layout_width="182dp"
+                            android:layout_height="47dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Menaxhimi i Porosive me ane te IOC eshte shume me i shpejt."
+                            android:textAlignment="viewStart"
+                            android:textColor="@android:color/tertiary_text_light"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/menageordersbtn"
+                            android:layout_width="115dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/totalporositetxt"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="43dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="33dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/button"
+                            android:text="Menaxho Porosite"
+                            android:textColor="@color/colorwhite"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/shpenzimetCard"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/cardview_light_background"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:text="Menaxho Faturat"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="187dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/shpenzime"></ImageView>
+
+                    <RelativeLayout
+                        android:layout_width="191dp"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/totalshpezimet"
+                            android:layout_width="182dp"
+                            android:layout_height="47dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Menaxhimi i Fakturave me IOC eshte shume i lehte dhe i thjeshte"
+                            android:textAlignment="viewStart"
+                            android:textColor="@android:color/tertiary_text_light"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/menageinvoicebtn"
+                            android:layout_width="115dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/totalshpezimet"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="43dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="33dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/button"
+                            android:text="Menaxho Faturat"
+                            android:textColor="@color/colorwhite"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/shikolokacioonintxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Kontrollo lokacionin tënd"
+        android:textColor="@color/colorgray"
+        android:textSize="18dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapview"
+                android:layout_width="368dp"
+                android:layout_height="251dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/openmapbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/gradientbtn"
+                android:fontFamily="@font/ubuntu_medium"
+                android:padding="5dp"
+                android:text="Hap harten"
+                android:textColor="@color/colorDarkGray" />
+
+        </RelativeLayout>
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorgray"
+    android:text="Porosite e Fundit"
+    android:id="@+id/txtporositeefundit"
+    android:textSize="18dp"
+    android:fontFamily="@font/ubuntu_medium"
+    android:layout_marginBottom="10dp"
+    android:layout_gravity="center"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="40dp"
+        android:scrollbarThumbHorizontal="@drawable/scrollthumb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Order1Card"
+                android:layout_width="160dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="#FAFAFA"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/order1card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="42dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Porosia ID :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/orderidtxt"
+                        android:layout_width="66dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="#1021"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlelocation1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="73dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="69dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lokaioni :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderlocationtxt"
+                        android:layout_width="90dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="74dp"
+                        android:layout_marginEnd="-7dp"
+                        android:layout_marginBottom="69dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Prishtinë"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlestatusi1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Statusi :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderstatusitxt"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Processing"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/orders2Card"
+                android:layout_width="160dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/cardview_light_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/order2card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/titlelocation2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="67dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lokaioni :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="44dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="97dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Porosia ID :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlestatusi2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="107dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="34dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Statusi :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderstatusitxt2"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="107dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="34dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Processing"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/order2idtxt"
+                        android:layout_width="66dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="43dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginBottom="97dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="#1022"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderlocation2txt"
+                        android:layout_width="90dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="68dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lipjan"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/order3Card"
+                android:layout_width="160dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/cardview_light_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/order3card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="42dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Porosia ID :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/orderid3txt"
+                        android:layout_width="66dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="41dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="#1023"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlelocation3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="73dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="69dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lokaioni :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderlocationtxt3"
+                        android:layout_width="90dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="72dp"
+                        android:layout_marginEnd="-1dp"
+                        android:layout_marginBottom="71dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Podujevë"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlestatusi3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Statusi :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderstatusitxt3"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="107dp"
+                        android:layout_marginEnd="-9dp"
+                        android:layout_marginBottom="34dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Processing"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/order4Card"
+                android:layout_width="160dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/cardview_light_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/order4card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="42dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Porosia ID :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/order4idtxt"
+                        android:layout_width="66dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="41dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="#1024"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlelocation4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="73dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="69dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lokaioni :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderlocationtxt4"
+                        android:layout_width="90dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="68dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Ferizaj"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlestatusi4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Statusi :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderstatusitxt4"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Processing"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ordersPaidCard"
+                android:layout_width="160dp"
+                android:layout_height="164dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/cardview_light_background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/orderstotalCard"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/order5card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="42dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Porosia ID :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/order5idtxt"
+                        android:layout_width="66dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="41dp"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginBottom="99dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="#1025"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlelocation5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="73dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="69dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Lokaioni :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderlocationtxt5"
+                        android:layout_width="90dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="68dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Gjilan"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/titlestatusi5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="-6dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Statusi :"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/orderstatusitxt5"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="36dp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Paid"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
+
+
+</ScrollView>
