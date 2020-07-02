@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Kryefaqja;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +18,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.fiek.projektiioc.Faturat.FakturatFragment;
+import com.fiek.projektiioc.Llogaria.LlogariaA;
+import com.fiek.projektiioc.Llogaria.LoginActivity;
+import com.fiek.projektiioc.Porosite.BtnPorositeFragment;
+import com.fiek.projektiioc.R;
+import com.fiek.projektiioc.Raportet.Raportet;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -127,7 +133,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
                     @Override
                     public void onClick(DialogInterface dialog,int which)
                     {
-                        Intent intent = new Intent(Mainmenu.this,LoginActivity.class);
+                        Intent intent = new Intent(Mainmenu.this, LoginActivity.class);
                         startActivity(intent);
 
                     }
@@ -202,7 +208,7 @@ public class Mainmenu extends AppCompatActivity implements  NavigationView.OnNav
         }
         if(menuItem.getItemId() == R.id.m_llogaria){
 
-            Intent intent = new Intent(Mainmenu.this,LlogariaA.class);
+            Intent intent = new Intent(Mainmenu.this, LlogariaA.class);
             startActivity(intent);
 
 

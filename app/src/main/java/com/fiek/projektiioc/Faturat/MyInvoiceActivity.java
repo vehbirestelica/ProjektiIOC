@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Faturat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fiek.projektiioc.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -102,7 +103,7 @@ public class MyInvoiceActivity extends AppCompatActivity {
 
     public void onItemClick (DocumentSnapshot documentSnapshot, int position){
         Invoice invoice = documentSnapshot.toObject(Invoice.class);
-        Intent intent = new Intent(MyInvoiceActivity.this,Invoice_details.class);
+        Intent intent = new Intent(MyInvoiceActivity.this, Invoice_details.class);
         intent.putExtra("invoice",invoice);
         startActivity(intent);
 //        String id = documentSnapshot.getId();

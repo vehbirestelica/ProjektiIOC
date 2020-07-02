@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/welcomebackground"
-    tools:context=".Raportet"
+    tools:context=".Raportet.Raportet"
     android:orientation="vertical"
     android:layout_marginTop="60dp">
 
