@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainfragmentbackground"
-    tools:context=".BtnPorositeFragment">
+    tools:context=".Porosite.BtnPorositeFragment">
 
     <TextView
         android:id="@+id/porositetitle"

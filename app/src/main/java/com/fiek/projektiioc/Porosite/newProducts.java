@@ -1,10 +1,12 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Porosite;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.fiek.projektiioc.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

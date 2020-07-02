@@ -1,4 +1,4 @@
-package com.fiek.projektiioc;
+package com.fiek.projektiioc.Faturat;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +23,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.fiek.projektiioc.Kryefaqja.Mainmenu;
+import com.fiek.projektiioc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,8 +43,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import io.opencensus.internal.StringUtils;
 
 public class NewInvoiceActivity extends AppCompatActivity {
 
@@ -294,7 +293,7 @@ public class NewInvoiceActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        Intent intent = new Intent(NewInvoiceActivity.this,Mainmenu.class);
+        Intent intent = new Intent(NewInvoiceActivity.this, Mainmenu.class);
         startActivity(intent);
     }
 }
